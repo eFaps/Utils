@@ -34,11 +34,22 @@
         <module name="TypeName"/>
         <module name="AvoidStarImport"/>
         <module name="IllegalImport"/>
+        <module name="ImportOrder">
+            <property name="groups" value="java javax org"/>
+            <property name="separated" value="true"/>
+        </module>
         <module name="RedundantImport"/>
+        <module name="FinalLocalVariable">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Parameters must defined final!"/>
+            <property name="severity" value="error"/>
+            <property name="tokens" value="PARAMETER_DEF"/>
+        </module>
         <module name="FileLength"/>
         <module name="LineLength">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="maximum line 120, comments should end at 80, line with @version or @see are ignored"/>
             <property name="ignorePattern" value="(\* @version)|(\* @see)"/>
-            <property name="tabWidth" value="2"/>
+            <property name="max" value="120"/>
+            <property name="tabWidth" value="4"/>
         </module>
         <module name="MethodLength"/>
         <module name="ParameterNumber"/>
@@ -60,7 +71,11 @@
         <module name="RedundantModifier"/>
         <module name="AvoidNestedBlocks"/>
         <module name="EmptyBlock"/>
-        <module name="LeftCurly"/>
+        <module name="LeftCurly">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="left curly for catch, while etc."/>
+            <property name="maxLineLength" value="120"/>
+            <property name="tokens" value="LITERAL_CATCH,LITERAL_DO,LITERAL_ELSE,LITERAL_FINALLY,LITERAL_FOR,LITERAL_IF,LITERAL_SWITCH,LITERAL_SYNCHRONIZED,LITERAL_TRY,LITERAL_WHILE"/>
+        </module>
         <module name="NeedBraces"/>
         <module name="RightCurly"/>
         <module name="DoubleCheckedLocking"/>
@@ -85,6 +100,11 @@
         <module name="VisibilityModifier"/>
         <module name="ArrayTypeStyle"/>
         <module name="FinalParameters"/>
+        <module name="RequireThis"/>
+        <module name="ReturnCount">
+            <property name="severity" value="error"/>
+            <property name="max" value="1"/>
+        </module>
         <module name="UpperEll"/>
         <module name="FinalLocalVariable"/>
         <module name="RequiredRegexp">
@@ -101,6 +121,17 @@
         </module>
         <module name="StringLiteralEquality"/>
         <module name="DeclarationOrder"/>
+        <module name="LeftCurly">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Left Curly for classes and methods"/>
+            <property name="option" value="nl"/>
+            <property name="maxLineLength" value="120"/>
+            <property name="tokens" value="CLASS_DEF,CTOR_DEF,INTERFACE_DEF,METHOD_DEF"/>
+        </module>
+        <module name="UnusedImports"/>
+        <module name="EmptyForIteratorPad"/>
+        <module name="Indentation">
+            <property name="severity" value="info"/>
+        </module>
     </module>
     <module name="PackageHtml"/>
     <module name="NewlineAtEndOfFile"/>
