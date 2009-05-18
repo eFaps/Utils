@@ -100,7 +100,9 @@
         <module name="VisibilityModifier"/>
         <module name="ArrayTypeStyle"/>
         <module name="FinalParameters"/>
-        <module name="RequireThis"/>
+        <module name="RequireThis">
+            <property name="checkMethods" value="false"/>
+        </module>
         <module name="ReturnCount">
             <property name="severity" value="error"/>
             <property name="max" value="1"/>
