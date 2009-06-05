@@ -803,6 +803,7 @@
               <xsd:enumeration value="ClassNameUI" />
               <xsd:enumeration value="Columns" />
               <xsd:enumeration value="Creatable" />
+	      <xsd:enumeration value="DependOnField" />
               <xsd:enumeration value="Editable" />
               <xsd:enumeration value="Expression" />
               <xsd:enumeration value="Filterable" />
@@ -1019,6 +1020,7 @@
           <xsd:enumeration value="UI_COMMAND_EXECUTE"/>
           <xsd:enumeration value="UI_FIELD_AUTOCOMPLETE"/>
           <xsd:enumeration value="UI_FIELD_CMD"/>
+          <xsd:enumeration value="UI_FIELD_DEPENDENCY"/>
           <xsd:enumeration value="UI_FIELD_VALUE"/>
           <xsd:enumeration value="UI_TABLE_EVALUATE"/>
           <xsd:enumeration value="UI_VALIDATE"/>
