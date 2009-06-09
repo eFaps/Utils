@@ -128,7 +128,7 @@
         <xsd:element name="version" type="eFaps:install_version" maxOccurs="unbounded" minOccurs="1"></xsd:element>
         <xsd:element name="files" type="eFaps:install_files" maxOccurs="unbounded" minOccurs="0">
           <xsd:annotation>
-            <xsd:documentation>This elementsare created automatically by the maven goal;</xsd:documentation>
+            <xsd:documentation>This elements are created automatically by the maven goal;</xsd:documentation>
           </xsd:annotation>
         </xsd:element>
       </xsd:sequence>
@@ -514,6 +514,7 @@
     <xsd:complexContent>
       <xsd:extension base="eFaps:AbstractDefinition">
         <xsd:sequence>
+          <xsd:element name="type" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
           <xsd:element name="field" type="eFaps:field" maxOccurs="unbounded" minOccurs="0"></xsd:element>
         </xsd:sequence>
       </xsd:extension>
@@ -802,9 +803,6 @@
               <xsd:enumeration value="Classification"/>
               <xsd:enumeration value="ClassNameUI" />
               <xsd:enumeration value="Columns" />
-              <xsd:enumeration value="Creatable" />
-	      <xsd:enumeration value="DependOnField" />
-              <xsd:enumeration value="Editable" />
               <xsd:enumeration value="Expression" />
               <xsd:enumeration value="Filterable" />
               <xsd:enumeration value="GroupCount" />
@@ -812,16 +810,18 @@
               <xsd:enumeration value="HRef" />
               <xsd:enumeration value="Label" />
               <xsd:enumeration value="Level"/>
+              <xsd:enumeration value="ModeCreate"/>
+              <xsd:enumeration value="ModeEdit"/>
+              <xsd:enumeration value="ModeSearch"/>
+              <xsd:enumeration value="ModeView"/>
               <xsd:enumeration value="Order"/>
               <xsd:enumeration value="Picker"/>
               <xsd:enumeration value="Required" />
               <xsd:enumeration value="Rows"/>
               <xsd:enumeration value="RowSpan"/>
-              <xsd:enumeration value="Searchable" />
               <xsd:enumeration value="ShowTypeIcon" />
               <xsd:enumeration value="SortAble" />
               <xsd:enumeration value="Target" />
-              <xsd:enumeration value="Viewable"/>
               <xsd:enumeration value="Width" />
             </xsd:restriction>
           </xsd:simpleType>
@@ -1020,8 +1020,8 @@
           <xsd:enumeration value="UI_COMMAND_EXECUTE"/>
           <xsd:enumeration value="UI_FIELD_AUTOCOMPLETE"/>
           <xsd:enumeration value="UI_FIELD_CMD"/>
-          <xsd:enumeration value="UI_FIELD_DEPENDENCY"/>
           <xsd:enumeration value="UI_FIELD_VALUE"/>
+          <xsd:enumeration value="UI_FIELD_UPDATE"/>
           <xsd:enumeration value="UI_TABLE_EVALUATE"/>
           <xsd:enumeration value="UI_VALIDATE"/>
         </xsd:restriction>
