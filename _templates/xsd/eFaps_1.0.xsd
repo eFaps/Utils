@@ -812,6 +812,7 @@
               <xsd:enumeration value="Level"/>
               <xsd:enumeration value="ModeCreate"/>
               <xsd:enumeration value="ModeEdit"/>
+              <xsd:enumeration value="ModePrint"/>
               <xsd:enumeration value="ModeSearch"/>
               <xsd:enumeration value="ModeView"/>
               <xsd:enumeration value="Order"/>
