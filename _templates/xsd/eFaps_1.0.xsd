@@ -865,6 +865,7 @@
               <xsd:enumeration value="Submit" />
               <xsd:enumeration value="SuccessDialog" />
               <xsd:enumeration value="Target" />
+              <xsd:enumeration value="TargetCmdRevise"/>
               <xsd:enumeration value="TargetCreateType" />
               <xsd:enumeration value="TargetConnectAttribute" />
               <xsd:enumeration value="TargetDefaultMenu"></xsd:enumeration>
@@ -933,6 +934,7 @@
       <xsd:element name="execute" type="eFaps:execute" maxOccurs="1" minOccurs="0"/>
       <xsd:element name="instance" type="eFaps:execute" maxOccurs="1" minOccurs="0"/>
       <xsd:element name="validate" type="eFaps:execute" maxOccurs="1" minOccurs="0"/>
+      <xsd:element name="command" type="xsd:string" maxOccurs="1" minOccurs="0"/>
     </xsd:sequence>
   </xsd:complexType>
   
