@@ -64,6 +64,18 @@
     </xsd:complexType>
   </xsd:element>
 
+  <xsd:element name="datamodel-dimension">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="eFaps:AbstractBase">
+          <xsd:sequence>
+            <xsd:element name="definition" type="eFaps:definition_datamodel-dimension" maxOccurs="unbounded" minOccurs="1"/>
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
   <xsd:element name="datamodel-sqltable">
     <xsd:complexType>
       <xsd:complexContent>
@@ -308,6 +320,7 @@
             <xsd:enumeration value="DateTime"/>
             <xsd:enumeration value="Decimal"/>
             <xsd:enumeration value="Integer" />
+            <xsd:enumeration value="IntegerWithUoM" />
             <xsd:enumeration value="Link" />
             <xsd:enumeration value="LinkWithRanges"/>
             <xsd:enumeration value="Long" />
@@ -317,8 +330,9 @@
             <xsd:enumeration value="Password"/>
             <xsd:enumeration value="PersonLink"/>
             <xsd:enumeration value="PolicyLink"/>
-            <xsd:enumeration value="Real"></xsd:enumeration>
+            <xsd:enumeration value="Real"/>
             <xsd:enumeration value="String"/>
+            <xsd:enumeration value="StringWithUoM"/>
             <xsd:enumeration value="Time"/>
             <xsd:enumeration value="Type" />
           </xsd:restriction>
@@ -328,6 +342,7 @@
       <xsd:element name="sqltable" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
       <xsd:element name="sqlcolumn" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
       <xsd:element name="defaultvalue" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
+      <xsd:element name="dimensionUUID" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
       <xsd:element name="validate" type="eFaps:validate" maxOccurs="unbounded" minOccurs="0"></xsd:element>
       <xsd:element name="trigger" type="eFaps:trigger4Attribute" maxOccurs="unbounded" minOccurs="0"></xsd:element>
     </xsd:sequence>
@@ -436,6 +451,17 @@
       <xsd:extension base="eFaps:AbstractDefinition">
         <xsd:sequence>
           <xsd:element name="attribute" type="eFaps:configAttribute" maxOccurs="unbounded" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="definition_datamodel-dimension">
+    <xsd:complexContent>
+      <xsd:extension base="eFaps:AbstractDefinition">
+        <xsd:sequence>
+          <xsd:element name="description" type="xsd:string" minOccurs="1"  maxOccurs="1"/>
+          <xsd:element name="uom" type="eFaps:uoM" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
@@ -1038,6 +1064,15 @@
   <xsd:complexType name="unique">
     <xsd:attribute name="name" type="xsd:string"></xsd:attribute>
     <xsd:attribute name="columns" type="xsd:string"></xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="uoM">
+    <xsd:sequence>
+      <xsd:element name="base" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+      <xsd:element name="name" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+      <xsd:element name="numerator" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+      <xsd:element name="denominator" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+    </xsd:sequence>
   </xsd:complexType>
 
 
