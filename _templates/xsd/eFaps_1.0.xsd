@@ -823,6 +823,7 @@
           <xsd:simpleType>
             <xsd:restriction base="xsd:string">
               <xsd:enumeration value="AlternateOID" />
+              <xsd:enumeration value="Attribute" />
               <xsd:enumeration value="CmdAppend"/>
               <xsd:enumeration value="CmdTargetField"/>
               <xsd:enumeration value="CmdRenderButton"/>
@@ -830,7 +831,10 @@
               <xsd:enumeration value="ClassNameUI" />
               <xsd:enumeration value="Columns" />
               <xsd:enumeration value="Expression" />
-              <xsd:enumeration value="Filterable" />
+              <xsd:enumeration value="FilterType" />
+              <xsd:enumeration value="FilterRequired" />
+              <xsd:enumeration value="FilterBase" />
+              <xsd:enumeration value="FilterDefault" />
               <xsd:enumeration value="GroupCount" />
               <xsd:enumeration value="HideLabel" />
               <xsd:enumeration value="HRef" />
@@ -842,10 +846,12 @@
               <xsd:enumeration value="ModeSearch"/>
               <xsd:enumeration value="ModeView"/>
               <xsd:enumeration value="Order"/>
+              <xsd:enumeration value="Phrase" />
               <xsd:enumeration value="Picker"/>
               <xsd:enumeration value="Required" />
               <xsd:enumeration value="Rows"/>
               <xsd:enumeration value="RowSpan"/>
+              <xsd:enumeration value="Select" />
               <xsd:enumeration value="ShowTypeIcon" />
               <xsd:enumeration value="SortAble" />
               <xsd:enumeration value="Target" />
@@ -893,6 +899,7 @@
               <xsd:enumeration value="Target" />
               <xsd:enumeration value="TargetCmdRevise"/>
               <xsd:enumeration value="TargetCreateType" />
+              <xsd:enumeration value="TargetCreateClassifications" />
               <xsd:enumeration value="TargetConnectAttribute" />
               <xsd:enumeration value="TargetDefaultMenu"></xsd:enumeration>
               <xsd:enumeration value="TargetMode" />
