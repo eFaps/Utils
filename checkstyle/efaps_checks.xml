@@ -34,11 +34,11 @@
         <module name="TypeName"/>
         <module name="AvoidStarImport"/>
         <module name="IllegalImport"/>
-       <module name="ImportOrder">
-   		 <property name="groups" value="java,javax,org,org.efaps,com"/>
-    		<property name="ordered" value="true"/>
-    		<property name="separated" value="true"/>
-   	</module>
+        <module name="ImportOrder">
+            <property name="severity" value="ignore"/>
+            <property name="groups" value="java,javax,org,org.efaps,com"/>
+            <property name="separated" value="true"/>
+        </module>
         <module name="RedundantImport"/>
         <module name="FinalLocalVariable">
             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Parameters must defined final!"/>
