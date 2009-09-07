@@ -16,7 +16,7 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 
-  Author:          jmox
+  Author:          The eFaps Team
   Revision:        $Rev$
   Last Changed:    $Date$
   Last Changed By: $Author$
@@ -300,6 +300,7 @@
       <xsd:element name="file-application" type="xsd:string" maxOccurs="1" minOccurs="0"/>
       <xsd:element name="file-revision" type="xsd:string" maxOccurs="1" minOccurs="0"/>
       <xsd:element name="description" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+      <xsd:element name="specification" type="xsd:string" maxOccurs="1" minOccurs="0"/>
     </xsd:sequence>
   </xsd:complexType>
 
@@ -315,6 +316,7 @@
   <!-- Types -->
   <xsd:complexType name="access">
     <xsd:sequence>
+      <xsd:element name="company" type="xsd:string" maxOccurs="unbounded" minOccurs="0"/>
       <xsd:element name="group" type="xsd:string" maxOccurs="unbounded" minOccurs="0"/>
       <xsd:element name="person" type="xsd:string" maxOccurs="unbounded" minOccurs="0"/>
       <xsd:element name="role" type="xsd:string" maxOccurs="unbounded" minOccurs="0"/>
