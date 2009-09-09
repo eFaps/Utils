@@ -353,6 +353,7 @@
             <xsd:enumeration value="DateTime"/>
             <xsd:enumeration value="Decimal"/>
             <xsd:enumeration value="DecimalWithUoM"/>
+            <xsd:enumeration value="FormatedString"/>
             <xsd:enumeration value="Integer" />
             <xsd:enumeration value="IntegerWithUoM" />
             <xsd:enumeration value="Link" />
