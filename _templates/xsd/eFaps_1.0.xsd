@@ -930,6 +930,7 @@
                             <xsd:enumeration value="FilterRequired" />
                             <xsd:enumeration value="FilterBase" />
                             <xsd:enumeration value="FilterDefault" />
+                            <xsd:enumeration value="FilterAttributes"/>
                             <xsd:enumeration value="GroupCount" />
                             <xsd:enumeration value="HideLabel" />
                             <xsd:enumeration value="HRef" />
