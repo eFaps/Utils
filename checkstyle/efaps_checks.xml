@@ -115,7 +115,7 @@
         <module name="RequiredRegexp">
             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Copyright 2003 - 2009 The eFaps Team"/>
             <property name="severity" value="error"/>
-            <property name="format" value="Copyright 2003 - 2009 The eFaps Team"/>
+            <property name="format" value="Copyright 2003 - 2010 The eFaps Team"/>
         </module>
         <module name="Regexp">
             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="No System.out"/>
