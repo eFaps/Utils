@@ -312,6 +312,18 @@
         </xsd:complexType>
     </xsd:element>
 
+    <xsd:element name="wiki-menu">
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:extension base="eFaps:AbstractBase">
+                    <xsd:sequence>
+                        <xsd:element name="definition" type="eFaps:definition_wiki-menu" maxOccurs="unbounded" minOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:extension>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
+
 
 
     <!-- Abstract Types -->
@@ -705,6 +717,18 @@
             <xsd:extension base="eFaps:AbstractDefinition">
                 <xsd:sequence>
                     <xsd:element name="status" type="xsd:boolean" maxOccurs="1" minOccurs="1" default="false"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="definition_wiki-menu">
+        <xsd:complexContent>
+            <xsd:extension base="eFaps:AbstractDefinition">
+                <xsd:sequence>
+                    <xsd:element name="target" type="eFaps:wiki-target" maxOccurs="1" minOccurs="0"/>
+                    <xsd:element name="childs" type="eFaps:childs" maxOccurs="1" minOccurs="0"/>
+                   <xsd:element name="property" type="eFaps:property_ui-command" maxOccurs="unbounded" minOccurs="0"/>
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
@@ -1226,6 +1250,12 @@
         </xsd:sequence>
         <xsd:attribute name="program" type="xsd:string" use="required"/>
         <xsd:attribute name="method" type="xsd:string" use="optional" default="execute"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="wiki-target">
+        <xsd:sequence>
+            <xsd:element name="wiki" type="xsd:string" maxOccurs="1" minOccurs="0" />
+        </xsd:sequence>
     </xsd:complexType>
 
     <xsd:group name="attributeGroup">
