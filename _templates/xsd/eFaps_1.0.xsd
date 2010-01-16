@@ -312,12 +312,12 @@
         </xsd:complexType>
     </xsd:element>
 
-    <xsd:element name="wiki-menu">
+    <xsd:element name="help-menu">
         <xsd:complexType>
             <xsd:complexContent>
                 <xsd:extension base="eFaps:AbstractBase">
                     <xsd:sequence>
-                        <xsd:element name="definition" type="eFaps:definition_wiki-menu" maxOccurs="unbounded" minOccurs="1"/>
+                        <xsd:element name="definition" type="eFaps:definition_help-menu" maxOccurs="unbounded" minOccurs="1"/>
                     </xsd:sequence>
                 </xsd:extension>
             </xsd:complexContent>
@@ -722,11 +722,11 @@
         </xsd:complexContent>
     </xsd:complexType>
 
-    <xsd:complexType name="definition_wiki-menu">
+    <xsd:complexType name="definition_help-menu">
         <xsd:complexContent>
             <xsd:extension base="eFaps:AbstractDefinition">
                 <xsd:sequence>
-                    <xsd:element name="target" type="eFaps:wiki-target" maxOccurs="1" minOccurs="0"/>
+                    <xsd:element name="target" type="eFaps:help-target" maxOccurs="1" minOccurs="0"/>
                     <xsd:element name="childs" type="eFaps:childs" maxOccurs="1" minOccurs="0"/>
                    <xsd:element name="property" type="eFaps:property_ui-command" maxOccurs="unbounded" minOccurs="0"/>
                 </xsd:sequence>
@@ -1113,6 +1113,7 @@
             <xsd:element name="validate" type="eFaps:execute" maxOccurs="1" minOccurs="0" />
             <xsd:element name="trigger" type="eFaps:trigger4Target" maxOccurs="unbounded" minOccurs="0"/>
             <xsd:element name="command" type="xsd:string" maxOccurs="1" minOccurs="0" />
+            <xsd:element name="help" type="xsd:string" maxOccurs="1" minOccurs="0" />
         </xsd:sequence>
     </xsd:complexType>
 
@@ -1252,7 +1253,7 @@
         <xsd:attribute name="method" type="xsd:string" use="optional" default="execute"/>
     </xsd:complexType>
 
-    <xsd:complexType name="wiki-target">
+    <xsd:complexType name="help-target">
         <xsd:sequence>
             <xsd:element name="wiki" type="xsd:string" maxOccurs="1" minOccurs="0" />
         </xsd:sequence>
