@@ -174,7 +174,7 @@
             <xsd:complexContent>
                 <xsd:extension base="eFaps:AbstractBase">
                     <xsd:sequence>
-                        <xsd:element name="definition" type="eFaps:definition_ui-image" maxOccurs="unbounded" minOccurs="1"/>
+                        <xsd:element name="definition" type="eFaps:definition_image" maxOccurs="unbounded" minOccurs="1"/>
                     </xsd:sequence>
                 </xsd:extension>
             </xsd:complexContent>
@@ -221,7 +221,7 @@
             <xsd:complexContent>
                 <xsd:extension base="eFaps:AbstractBase">
                     <xsd:sequence>
-                        <xsd:element name="definition" type="eFaps:definition_ui-image" maxOccurs="unbounded" minOccurs="1" />
+                        <xsd:element name="definition" type="eFaps:definition_image" maxOccurs="unbounded" minOccurs="1" />
                     </xsd:sequence>
                 </xsd:extension>
             </xsd:complexContent>
@@ -324,7 +324,17 @@
         </xsd:complexType>
     </xsd:element>
 
-
+    <xsd:element name="wiki-image">
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:extension base="eFaps:AbstractBase">
+                    <xsd:sequence>
+                        <xsd:element name="definition" type="eFaps:definition_image" maxOccurs="unbounded" minOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:extension>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
 
     <!-- Abstract Types -->
     <xsd:complexType name="AbstractBase">
@@ -628,7 +638,7 @@
         </xsd:complexContent>
     </xsd:complexType>
 
-    <xsd:complexType name="definition_ui-image">
+    <xsd:complexType name="definition_image">
         <xsd:complexContent>
             <xsd:extension base="eFaps:AbstractDefinition">
                 <xsd:sequence>
