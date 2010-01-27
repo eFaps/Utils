@@ -3,7 +3,7 @@
     This configuration file was written by the eclipse-cs plugin configuration editor
 -->
 <!--
-    Checkstyle-Configuration: eFapsChecks
+    Checkstyle-Configuration: eFaps Checkstyle
     Description: none
 -->
 <!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.2//EN" "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
@@ -113,9 +113,9 @@
         <module name="UpperEll"/>
         <module name="FinalLocalVariable"/>
         <module name="RequiredRegexp">
-            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Copyright 2003 - 2009 The eFaps Team"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Copyright #### - 2010"/>
             <property name="severity" value="error"/>
-            <property name="format" value="Copyright 2003 - 2010 The eFaps Team"/>
+            <property name="format" value="Copyright \d{4} - 2010 (moxter.net)|(The eFaps Team)"/>
         </module>
         <module name="Regexp">
             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="No System.out"/>
