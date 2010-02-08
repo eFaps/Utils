@@ -1043,6 +1043,7 @@
                             <xsd:enumeration value="NoUpdateAfterCOMMAND" />
                             <xsd:enumeration value="Label" />
                             <xsd:enumeration value="Submit" />
+                            <xsd:enumeration value="SubmitSelectedRows"/>
                             <xsd:enumeration value="SuccessDialog" />
                             <xsd:enumeration value="Target" />
                             <xsd:enumeration value="TargetCmdRevise" />
