@@ -971,6 +971,7 @@
                             <xsd:enumeration value="Attribute" />
                             <xsd:enumeration value="Align"/>
                             <xsd:enumeration value="CmdAppend" />
+                            <xsd:enumeration value="CmdIcon"/>
                             <xsd:enumeration value="CmdTargetField" />
                             <xsd:enumeration value="CmdRenderButton" />
                             <xsd:enumeration value="Classification" />
