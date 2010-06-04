@@ -407,6 +407,7 @@
                         <xsd:enumeration value="Password" />
                         <xsd:enumeration value="PersonLink" />
                         <xsd:enumeration value="PolicyLink" />
+                        <xsd:enumeration value="Rate" />
                         <xsd:enumeration value="Real" />
                         <xsd:enumeration value="Status" />
                         <xsd:enumeration value="String" />
