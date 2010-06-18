@@ -11,6 +11,7 @@
     <property name="severity" value="warning"/>
     <module name="TreeWalker">
         <property name="tabWidth" value="4"/>
+        <module name="FileContentsHolder"/>
         <module name="JavadocMethod">
             <property name="allowUndeclaredRTE" value="true"/>
             <property name="logLoadErrors" value="true"/>
@@ -141,4 +142,5 @@
     <module name="PackageHtml"/>
     <module name="NewlineAtEndOfFile"/>
     <module name="Translation"/>
+    <module name="SuppressionCommentFilter"/>
 </module>
