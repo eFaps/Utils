@@ -55,7 +55,11 @@
             <property name="max" value="120"/>
             <property name="tabWidth" value="4"/>
         </module>
-        <module name="MethodLength"/>
+        <module name="MethodLength">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="eFpas uses max 200 due to new line foe every parameter etc."/>
+            <property name="max" value="200"/>
+            <property name="countEmpty" value="false"/>
+        </module>
         <module name="ParameterNumber"/>
         <module name="EmptyForIteratorPad"/>
         <module name="MethodParamPad"/>
