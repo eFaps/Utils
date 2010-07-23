@@ -442,6 +442,7 @@
             <xsd:element name="parent" type="xsd:string" maxOccurs="1" minOccurs="0"/>
             <xsd:element name="sqltable" type="xsd:string" maxOccurs="1" minOccurs="1"/>
             <xsd:element name="sqlcolumn" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+            <xsd:element name="uuid" type="xsd:string" maxOccurs="1" minOccurs="1" nillable="false"/>
             <xsd:element name="attribute" type="eFaps:attribute" maxOccurs="unbounded" minOccurs="0"/>
         </xsd:sequence>
     </xsd:complexType>
