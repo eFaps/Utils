@@ -145,12 +145,17 @@
     <module name="AbstractClassName">
       <property name="format" value="^Abstract.*$|^.*Factory$|^.*_Base$"/>
     </module>
-    <module name="ClassTypeParameterName"/>
+    <module name="ClassTypeParameterName">
+      <property name="format" value="^[A-Z]*$"/>
+    </module>
     <module name="ConstantName"/>
     <module name="MultipleVariableDeclarations"/>
     <module name="PackageDeclaration"/>
     <module name="ParameterAssignment"/>
     <module name="UnnecessaryParentheses"/>
+    <module name="MethodTypeParameterName">
+      <property name="format" value="^[A-Z]*$"/>
+    </module>
   </module>
   <module name="FileTabCharacter"/>
   <module name="NewlineAtEndOfFile"/>
