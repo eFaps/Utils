@@ -1167,10 +1167,14 @@
     </xsd:complexType>
 
     <xsd:complexType name="typeClassifies">
+        <xsd:sequence>
+            <xsd:element name="company" type="xsd:string" maxOccurs="unbounded" minOccurs="0"/>
+        </xsd:sequence>
         <xsd:attribute name="type" type="xsd:string" use="required" />
         <xsd:attribute name="relType" type="xsd:string" use="required" />
         <xsd:attribute name="relLinkAttribute" type="xsd:string" use="required" />
         <xsd:attribute name="relTypeAttribute" type="xsd:string" use="required" />
+        <xsd:attribute name="multipleSelect" type="xsd:string" use="optional" />
     </xsd:complexType>
 
     <xsd:complexType name="trigger4Attribute">
