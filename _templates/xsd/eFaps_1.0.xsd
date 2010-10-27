@@ -776,12 +776,11 @@
             <xsd:element name="evaluate" type="eFaps:evaluate" maxOccurs="1" minOccurs="0" />
         </xsd:sequence>
         <xsd:attribute name="name" type="xsd:string" use="required"/>
-        <xsd:attribute name="character" use="optional" default="Expression">
+        <xsd:attribute name="character" use="optional">
             <xsd:simpleType>
                 <xsd:restriction base="xsd:string">
                     <xsd:enumeration value="Classification" />
                     <xsd:enumeration value="Command" />
-                    <xsd:enumeration value="Expression" />
                     <xsd:enumeration value="Group" />
                     <xsd:enumeration value="Heading" />
                     <xsd:enumeration value="Set" />
@@ -989,7 +988,6 @@
                 <xsd:attribute name="name" use="required">
                     <xsd:simpleType>
                         <xsd:restriction base="xsd:string">
-                            <xsd:enumeration value="AlternateOID" />
                             <xsd:enumeration value="Attribute" />
                             <xsd:enumeration value="Align"/>
                             <xsd:enumeration value="CmdAppend" />
@@ -999,7 +997,6 @@
                             <xsd:enumeration value="Classification" />
                             <xsd:enumeration value="ClassNameUI" />
                             <xsd:enumeration value="Columns" />
-                            <xsd:enumeration value="Expression" />
                             <xsd:enumeration value="FilterType" />
                             <xsd:enumeration value="FilterRequired" />
                             <xsd:enumeration value="FilterBase" />
