@@ -1123,6 +1123,7 @@
         </xsd:sequence>
         <xsd:attribute name="classification" type="xsd:boolean" />
         <xsd:attribute name="abstract" type="xsd:boolean" default="false" />
+        <xsd:attribute name="GeneralInstance" type="xsd:boolean" default="false" />
     </xsd:complexType>
 
     <xsd:complexType name="typeStore">
