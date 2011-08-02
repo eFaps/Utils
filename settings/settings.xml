@@ -1,0 +1,75 @@
+<settings xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <pluginGroups>
+        <pluginGroup>org.efaps.maven</pluginGroup>
+    </pluginGroups>
+
+    <profiles>
+        <profile>
+            <id>efaps</id>
+            <properties>
+                <org.efaps.db.factory>org.apache.commons.dbcp.BasicDataSourceFactory</org.efaps.db.factory>
+                <org.efaps.db.type>org.efaps.db.databases.PostgreSQLDatabase</org.efaps.db.type>
+                <org.efaps.db.connection>
+                    username = efaps,
+                    password = efaps,
+                    driverClassName = org.postgresql.Driver,
+                    url = jdbc:postgresql://127.0.0.1:5432/efaps,
+                    factory = org.apache.commons.dbcp.BasicDataSourceFactory,
+                    maxActive = 100,
+                    maxIdle = 10,
+                    maxWait = -1,
+                    removeAbandoned = true,
+                    logAbandoned = true
+                </org.efaps.db.connection>
+                <org.efaps.stores>
+                    stores = documents,
+                    documents.naming = eFaps/store/documents,
+                    documents.basename = file://${basedir}/target/store,
+                    documents.provider = org.apache.commons.vfs.provider.local.DefaultLocalFileProvider
+                </org.efaps.stores>
+                <org.efaps.transaction.timeout>9900</org.efaps.transaction.timeout>
+                <org.efaps.transaction.manager>org.objectweb.jotm.Current</org.efaps.transaction.manager>
+            </properties>
+            <repositories>
+                <repository>
+                    <id>snapshot</id>
+                    <releases>
+                        <enabled>false</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>never</updatePolicy>
+                        <checksumPolicy>fail</checksumPolicy>
+                    </snapshots>
+                    <url>http://oss.sonatype.org/content/groups/public</url>
+                    <layout>default</layout>
+                </repository>
+                <repository>
+                    <id>maven2-repository.dev.java.net</id>
+                    <releases>
+                        <enabled>false</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                    <name>Java.net Repository for Maven</name>
+                    <url>http://download.java.net/maven/2/</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>maven2-repository.dev.java.net</id>
+                    <name>Java.net Repository for Maven</name>
+                    <url>http://download.java.net/maven/2/</url>
+                    <layout>default</layout>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>efaps</activeProfile>
+    </activeProfiles>
+</settings>
