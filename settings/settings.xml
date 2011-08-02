@@ -51,7 +51,7 @@
                 <repository>
                     <id>maven2-repository.dev.java.net</id>
                     <releases>
-                        <enabled>false</enabled>
+                        <enabled>true</enabled>
                         <updatePolicy>always</updatePolicy>
                         <checksumPolicy>warn</checksumPolicy>
                     </releases>
