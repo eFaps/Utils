@@ -4,6 +4,13 @@
     <pluginGroups>
         <pluginGroup>org.efaps.maven</pluginGroup>
     </pluginGroups>
+    <servers>
+        <server>
+          <id>sonatype-nexus-snapshots</id>
+          <username>jan.moxter</username>
+          <password>{vBUtzwM9tuEHwHHDul6iueMGpDlvdHx1k9xpZpVCBT0=}</password>
+        </server>
+    </servers>
 
     <profiles>
         <profile>
