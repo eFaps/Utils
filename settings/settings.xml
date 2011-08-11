@@ -73,6 +73,11 @@
                     <url>http://download.java.net/maven/2/</url>
                     <layout>default</layout>
                 </pluginRepository>
+                <pluginRepository>
+                    <id>jfrog-plugins</id>
+                    <name>jfrog-plugins-dist</name>
+                    <url>http://repo.jfrog.org/artifactory/repo</url>
+            </pluginRepository>
             </pluginRepositories>
         </profile>
     </profiles>
