@@ -1128,8 +1128,6 @@
 
     <xsd:complexType name="typeStore">
         <xsd:attribute name="name" type="xsd:string" use="required" />
-        <xsd:attribute name="attributeFileLength" type="xsd:string" use="required" />
-        <xsd:attribute name="attributeFileName" type="xsd:string" use="required" />
     </xsd:complexType>
 
     <xsd:complexType name="typeClassifies">
