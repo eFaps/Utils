@@ -1,0 +1,14 @@
+ALTER TABLE t_cmsysconf ADD COLUMN companyid bigint;
+
+create or replace view V_CMSYSCONF as
+        select T_CMABSTRACT.ID as CONFIGID,
+               T_CMABSTRACT.NAME as CONFIGNAME,
+               T_CMABSTRACT.UUID as CONFIGUUID,
+               T_CMSYSCONF.KEY,
+               T_CMSYSCONF.VALUE,
+               t3.UUID,
+               T_CMSYSCONF.COMPANYID
+          from T_CMSYSCONF
+          join T_CMABSTRACT on T_CMSYSCONF.ABSTRACTID = T_CMABSTRACT.ID
+          join T_CMABSTRACT t3 on T_CMSYSCONF.TYPEID = t3.ID
+          order by CONFIGID;

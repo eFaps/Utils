@@ -1,0 +1,121 @@
+DELETE
+FROM 	t_cmgeninst
+WHERE 	ID NOT IN
+	(SELECT 	MAX(dup.ID)
+        FROM   		t_cmgeninst As dup
+        GROUP BY 	dup.insttypeid, dup.instid);
+
+
+-- insert t_prgabstract instances into general instance
+
+INSERT INTO t_cmgeninst(insttypeid, instid)
+SELECT typeid, t_cmabstract.id
+ FROM t_cmabstract inner join t_prgabstract on t_cmabstract.id = t_prgabstract.id
+where t_cmabstract.id not in
+(SELECT t3.id 
+  FROM t_cmgeninst
+inner join
+  (SELECT typeid, t_cmabstract.id, filename, filelength 
+  FROM t_cmabstract inner join t_prgabstract on t_cmabstract.id = t_prgabstract.id) t3 
+  on t_cmgeninst.insttypeid = t3.typeid and t_cmgeninst.instid = t3.id);
+
+
+-- insert t_prgcompiled instances into general instance
+
+INSERT INTO t_cmgeninst(insttypeid, instid)
+SELECT typeid, id
+  FROM t_prgcompiled where id not in
+(SELECT t3.id 
+  FROM t_cmgeninst
+inner join
+  (SELECT typeid, id, filename, filelength 
+  FROM t_prgcompiled) t3 
+  on t_cmgeninst.insttypeid = t3.typeid and t_cmgeninst.instid = t3.id);
+
+
+
+INSERT INTO t_cmgenstore(id, filename, filelength)
+SELECT t_cmgeninst.id, filename, filelength 
+  FROM t_cmgeninst
+inner join
+  (SELECT typeid, t_cmabstract.id, filename, filelength 
+  FROM t_cmabstract inner join t_prgabstract on t_cmabstract.id = t_prgabstract.id) t3 
+  on t_cmgeninst.insttypeid = t3.typeid and t_cmgeninst.instid = t3.id;
+
+
+INSERT INTO t_cmgenstorejdbc(id, filecontent)
+SELECT t_cmgeninst.id, code
+  FROM t_cmgeninst
+inner join
+  (SELECT typeid, t_cmabstract.id, filename, filelength, code 
+  FROM t_cmabstract inner join t_prgabstract on t_cmabstract.id = t_prgabstract.id) t3 
+  on t_cmgeninst.insttypeid = t3.typeid and t_cmgeninst.instid = t3.id;
+
+
+INSERT INTO t_cmgeninst(insttypeid, instid)
+SELECT typeid, id
+  FROM t_prgcompiled where id not in
+(SELECT t3.id 
+  FROM t_cmgeninst
+inner join
+  (SELECT typeid, id, filename, filelength 
+  FROM t_prgcompiled) t3 
+  on t_cmgeninst.insttypeid = t3.typeid and t_cmgeninst.instid = t3.id);
+
+
+INSERT INTO t_cmgenstore(id, filename, filelength)
+SELECT t_cmgeninst.id, filename, filelength 
+  FROM t_cmgeninst
+inner join
+  (SELECT typeid, id, filename, filelength 
+  FROM t_prgcompiled) t3 
+  on t_cmgeninst.insttypeid = t3.typeid and t_cmgeninst.instid = t3.id;
+
+
+INSERT INTO t_cmgenstorejdbc(id, filecontent)
+SELECT t_cmgeninst.id, cplprg
+  FROM t_cmgeninst
+inner join
+  (SELECT id, typeid, cplprg
+  FROM t_prgcompiled) t3 
+  on t_cmgeninst.insttypeid = t3.typeid and t_cmgeninst.instid = t3.id;
+
+
+
+INSERT INTO t_cmgeninst(insttypeid, instid)
+SELECT typeid, t_cmabstract.id
+ FROM t_cmabstract inner join t_uifile on t_cmabstract.id = t_uifile.id
+where t_cmabstract.id not in
+(SELECT t3.id 
+  FROM t_cmgeninst
+inner join
+  (SELECT typeid, t_cmabstract.id, filename, filelength 
+  FROM t_cmabstract inner join t_uifile on t_cmabstract.id = t_uifile.id) t3 
+  on t_cmgeninst.insttypeid = t3.typeid and t_cmgeninst.instid = t3.id);
+
+
+
+INSERT INTO t_cmgenstore(id, filename, filelength)
+SELECT t_cmgeninst.id, filename, filelength 
+  FROM t_cmgeninst
+inner join
+  (SELECT typeid, t_cmabstract.id, filename, filelength 
+  FROM t_cmabstract inner join t_uifile on t_cmabstract.id = t_uifile.id) t3 
+  on t_cmgeninst.insttypeid = t3.typeid and t_cmgeninst.instid = t3.id;
+
+
+INSERT INTO t_cmgenstorejdbc(id, filecontent)
+SELECT t_cmgeninst.id, filecontent
+  FROM t_cmgeninst
+inner join
+  (SELECT t_cmabstract.id, typeid, filecontent
+  FROM t_cmabstract inner join t_uifile on t_cmabstract.id = t_uifile.id) t3 
+  on t_cmgeninst.insttypeid = t3.typeid and t_cmgeninst.instid = t3.id;
+
+
+
+ALTER TABLE t_prgcompiled DROP CONSTRAINT t_prgcl_fk_prg;
+
+ALTER TABLE t_cmquartztrig DROP CONSTRAINT t_cmquartztrig_fk_esjpid;
+
+
