@@ -49,8 +49,8 @@
                     </releases>
                     <snapshots>
                         <enabled>true</enabled>
-                        <updatePolicy>never</updatePolicy>
-                        <checksumPolicy>fail</checksumPolicy>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
                     </snapshots>
                     <url>http://oss.sonatype.org/content/groups/public</url>
                     <layout>default</layout>
