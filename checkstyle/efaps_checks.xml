@@ -15,7 +15,6 @@
     <module name="FileContentsHolder"/>
     <module name="JavadocMethod">
       <property name="allowUndeclaredRTE" value="true"/>
-      <property name="logLoadErrors" value="true"/>
       <property name="suppressLoadErrors" value="true"/>
     </module>
     <module name="JavadocType"/>
@@ -89,7 +88,6 @@
     <module name="InnerAssignment"/>
     <module name="MissingSwitchDefault"/>
     <module name="RedundantThrows">
-      <property name="logLoadErrors" value="true"/>
       <property name="suppressLoadErrors" value="true"/>
     </module>
     <module name="SimplifyBooleanExpression"/>
@@ -100,7 +98,9 @@
     </module>
     <module name="FinalClass"/>
     <module name="HideUtilityClassConstructor"/>
-    <module name="InterfaceIsType"/>
+    <module name="InterfaceIsType">
+      <property name="severity" value="ignore"/>
+    </module>
     <module name="VisibilityModifier"/>
     <module name="ArrayTypeStyle"/>
     <module name="FinalParameters"/>
