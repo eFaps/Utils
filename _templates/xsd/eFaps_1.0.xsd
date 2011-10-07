@@ -1001,6 +1001,7 @@
                             <xsd:enumeration value="Select" />
                             <xsd:enumeration value="SelectAlternateOID" />
                             <xsd:enumeration value="ShowTypeIcon" />
+                            <xsd:enumeration value="ShowNumbering"/>
                             <xsd:enumeration value="SortAble" />
                             <xsd:enumeration value="Target" />
                             <xsd:enumeration value="TargetStructurBrowserField"/>
