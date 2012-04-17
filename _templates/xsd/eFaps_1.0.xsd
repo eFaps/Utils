@@ -379,6 +379,7 @@
                         <xsd:enumeration value="Created" />
                         <xsd:enumeration value="CreatorLink" />
                         <xsd:enumeration value="CompanyLink" />
+                        <xsd:enumeration value="ConsortiumLink"/>
                         <xsd:enumeration value="Date" />
                         <xsd:enumeration value="DateTime" />
                         <xsd:enumeration value="Decimal" />
