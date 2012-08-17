@@ -38,6 +38,5 @@ INSERT INTO t_salespossum (id,grossunitprice,netunitprice,grossprice,netprice,di
 '569bed44-68cb-470e-bd73-9a5e485f73dd',
 'dea2d547-8074-4fc1-8267-d1a5b7f6e1be',
 'b6429526-fad2-433a-920d-2a5a50fa9261',
-'5d092856-bf86-4965-b50d-7aa7d82cd195',
-'61c347f2-c0da-457f-82a3-3a26619dadb1')))
+'5d092856-bf86-4965-b50d-7aa7d82cd195')))
 
