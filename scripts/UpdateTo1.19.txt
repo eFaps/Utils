@@ -40,3 +40,16 @@ INSERT INTO t_salespossum (id,grossunitprice,netunitprice,grossprice,netprice,di
 'b6429526-fad2-433a-920d-2a5a50fa9261',
 '5d092856-bf86-4965-b50d-7aa7d82cd195')))
 
+
+-- drop columns to table t_salespos
+ALTER TABLE t_salespos DROP COLUMN grossunitprice
+ALTER TABLE t_salespos DROP COLUMN netunitprice
+ALTER TABLE t_salespos DROP COLUMN grossprice
+ALTER TABLE t_salespos DROP COLUMN netprice
+ALTER TABLE t_salespos DROP COLUMN discountprice
+ALTER TABLE t_salespos DROP COLUMN taxid
+ALTER TABLE t_salespos DROP COLUMN discount
+ALTER TABLE t_salespos DROP COLUMN currencyid
+ALTER TABLE t_salespos DROP COLUMN ratecurrencyid
+ALTER TABLE t_salespos DROP COLUMN rate
+ALTER TABLE t_salespos DROP COLUMN ratedenom
