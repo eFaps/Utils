@@ -25,7 +25,7 @@ SELECT setval('t_erpdoc2payment_id_seq', (select max(id) from t_erpdoc2payment))
 -- and adding column with values '0' as default.
 
 INSERT INTO t_salespossum (id,grossunitprice,netunitprice,grossprice,netprice,discountprice,taxid,discount,currencyid,ratecurrencyid,rate,ratedenom,rgrossunitprice,rnetunitprice,rgrossprice,rnetprice,rdiscountprice)
-(SELECT id,grossunitprice,netunitprice,grossprice,netprice,discountprice,taxid,discount,currencyid,ratecurrencyid,rate,ratedenom,'0' as select1,'0' as select2,'0' as select3,'0' as select4,'0' as select5
+(SELECT id,grossunitprice,netunitprice,grossprice,netprice,discountprice,taxid,discount,currencyid,ratecurrencyid,rate,ratedenom,grossunitprice,netunitprice,grossprice,netprice,discountprice
  FROM t_salespos WHERE typeid IN (select id from t_cmabstract
  WHERE uuid IN (
 'f356ca25-b514-4a24-83a4-0997fedaa54a',
