@@ -62,3 +62,22 @@ UPDATE t_runleveldef
 INSERT INTO t_runleveldef(runlevelid, priority, "class", method)
     VALUES (1, 7, 'org.efaps.admin.user.Consortium', 'initialize');
 
+
+delete FROM t_eventdef
+  where prg in (Select id FROM t_cmabstract
+ where "name" like 'org.efaps.esjp.ui.xml%');
+delete from t_prgcompiled;
+DELETE FROM t_cmabstract
+ where "name" like 'org.efaps.esjp.ui.xml%';
+
+-- add new columns to the general instance table and set the default values
+ALTER TABLE t_cmgeninst ADD COLUMN "exid" bigint NOT NULL DEFAULT 0;
+ALTER TABLE t_cmgeninst ADD COLUMN "exsysid" bigint NOT NULL DEFAULT 0;
+ALTER TABLE t_cmgeninst
+   ALTER COLUMN "exid" DROP DEFAULT;
+ALTER TABLE t_cmgeninst
+   ALTER COLUMN "exsysid" DROP DEFAULT;
+
+
+
+

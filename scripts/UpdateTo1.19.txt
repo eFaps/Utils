@@ -5,7 +5,7 @@ insert into t_erpdoc2payment (id,companyid,"date",fromid,toid,creator,created,mo
 (select id from t_cmabstract where uuid in ('367bf4d8-d082-4eb6-9afc-88917b876ddb')) from t_salespayment);
 
 -- alter sequence to max value of the table t_erpdoc2payment
-SELECT setval('t_erpdoc2payment_id_seq', (select max(id) from t_erpdoc2payment))
+SELECT setval('t_erpdoc2payment_id_seq', (select max(id) from t_erpdoc2payment));
 
 
 # 1ª Insert data to t_salespos at t_salespossum
@@ -33,23 +33,23 @@ inner join t_cmabstract t1 on t0.typeid = t1.id
 and t1.uuid in ('7891b13e-7d77-44dd-906e-286641267499','1886c4f8-3f8b-4a4a-b9af-475204936456','6409ee95-3cd2-4063-8080-d010466fd5c7',
 '491aa65f-cbc8-464c-86bc-ef19ed6302ad','180bf737-8816-4e36-ad71-5ee6392e185b','17e30627-33c7-4dcb-a209-056932d0c9c0','c9b714db-9078-49db-9ce2-dcf56e3fae2b',
 'ae29490a-0751-413e-9c6f-f198eff849fa','68ee631f-757a-4029-9391-418e38860421','77b5c009-0b45-40d4-8417-a79c30568904','40ebe7bf-ab1e-4ac5-bfbf-81f7c13e8530',
-'570f12ff-ab0d-4a0f-aa87-e39aabf6f395'))))))
+'570f12ff-ab0d-4a0f-aa87-e39aabf6f395'))))));
 
 -- drop constraint to table t_salespos not using.
-ALTER TABLE t_salespos DROP CONSTRAINT T_SALESPOS_CURRENCYID
-ALTER TABLE t_salespos DROP CONSTRAINT T_SALESPOS_RATECURRENCYID
+ALTER TABLE t_salespos DROP CONSTRAINT T_SALESPOS_CURRENCYID;
+ALTER TABLE t_salespos DROP CONSTRAINT T_SALESPOS_RATECURRENCYID;
 
 -- drop columns to table t_salespos
-ALTER TABLE t_salespos DROP COLUMN grossunitprice
-ALTER TABLE t_salespos DROP COLUMN netunitprice
-ALTER TABLE t_salespos DROP COLUMN grossprice
-ALTER TABLE t_salespos DROP COLUMN netprice
-ALTER TABLE t_salespos DROP COLUMN discountprice
-ALTER TABLE t_salespos DROP COLUMN taxid
-ALTER TABLE t_salespos DROP COLUMN discount
-ALTER TABLE t_salespos DROP COLUMN currencyid
-ALTER TABLE t_salespos DROP COLUMN ratecurrencyid
-ALTER TABLE t_salespos DROP COLUMN rate
-ALTER TABLE t_salespos DROP COLUMN ratedenom
+ALTER TABLE t_salespos DROP COLUMN grossunitprice;
+ALTER TABLE t_salespos DROP COLUMN netunitprice;
+ALTER TABLE t_salespos DROP COLUMN grossprice;
+ALTER TABLE t_salespos DROP COLUMN netprice;
+ALTER TABLE t_salespos DROP COLUMN discountprice;
+ALTER TABLE t_salespos DROP COLUMN taxid;
+ALTER TABLE t_salespos DROP COLUMN discount;
+ALTER TABLE t_salespos DROP COLUMN currencyid;
+ALTER TABLE t_salespos DROP COLUMN ratecurrencyid;
+ALTER TABLE t_salespos DROP COLUMN rate;
+ALTER TABLE t_salespos DROP COLUMN ratedenom;
 
 
