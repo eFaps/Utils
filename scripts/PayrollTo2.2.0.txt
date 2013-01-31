@@ -14,3 +14,20 @@ ALTER TABLE t_prdoc DROP COLUMN amountpay;
 ALTER TABLE t_prdoc DROP COLUMN currencyid;
 
 ALTER TABLE t_prdoc ADD CONSTRAINT t_prdoc_fk_id FOREIGN KEY (id) REFERENCES t_erpdoc (id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+-- correct the table for positions
+
+ALTER TABLE t_prposition ADD COLUMN ratecurrencyid bigint;
+ALTER TABLE t_prposition ADD COLUMN rateamount numeric(20,2);
+ALTER TABLE t_prposition ADD COLUMN rate numeric(14,6);
+ALTER TABLE t_prposition ADD COLUMN ratedenom numeric(14,6);
+
+UPDATE t_prposition SET ratecurrencyid=currencyid, rateamount=amount, rate=1, ratedenom=1;
+
+ALTER TABLE t_prposition ALTER COLUMN ratecurrencyid SET NOT NULL;
+ALTER TABLE t_prposition ALTER COLUMN rateamount SET NOT NULL;
+ALTER TABLE t_prposition ALTER COLUMN rate SET NOT NULL;
+ALTER TABLE t_prposition ALTER COLUMN ratedenom SET NOT NULL;
+
+ALTER TABLE t_prposition ADD CONSTRAINT t_prdoc_ratecurrencyid FOREIGN KEY (ratecurrencyid) REFERENCES t_erpcur (id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
