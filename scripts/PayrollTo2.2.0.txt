@@ -1,0 +1,16 @@
+-- update payroll table from 2.1.0-SNAPSHOT to 2.2.0-SNAPSHOT
+
+
+-- copy the values to the sales table
+
+INSERT INTO t_salesdocsums(
+            id, crosstotal, nettotal, discounttotal, currencyid, rate, ratedenom,
+            ratecrosstotal, ratenettotal, ratediscounttotal, ratecurrencyid)
+  SELECT id, amountpay, amountpay, 0, currencyid,1,1, amountpay, amountpay, 0, currencyid
+  FROM t_prdoc;
+
+-- correct the table
+ALTER TABLE t_prdoc DROP COLUMN amountpay;
+ALTER TABLE t_prdoc DROP COLUMN currencyid;
+
+ALTER TABLE t_prdoc ADD CONSTRAINT t_prdoc_fk_id FOREIGN KEY (id) REFERENCES t_erpdoc (id) ON UPDATE NO ACTION ON DELETE NO ACTION;
