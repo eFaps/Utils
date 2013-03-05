@@ -23,7 +23,7 @@ UPDATE T_COATTRPOC
     (SELECT t_erpattrdef.id as targetid,t_coattrdef.id as orgiginid
    FROM t_coattrdef
   inner join t_erpattrdef on t_erpattrdef.typeid = t_coattrdef.typeid and t_erpattrdef.value = t_coattrdef.value
-)
+) t1 where T_COATTRPOC.defid = t1.orgiginid;
 
 
 
