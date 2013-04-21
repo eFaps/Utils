@@ -718,6 +718,7 @@
             <xsd:extension base="eFaps:AbstractDefinition">
                 <xsd:sequence>
                     <xsd:element name="status" type="xsd:boolean" maxOccurs="1" minOccurs="1" default="false"/>
+                    <xsd:element name="global" type="xsd:boolean" maxOccurs="1" minOccurs="1" default="true"/>
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
