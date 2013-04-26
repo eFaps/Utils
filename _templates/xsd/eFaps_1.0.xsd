@@ -300,6 +300,19 @@
         </xsd:complexType>
     </xsd:element>
 
+    <xsd:element name="user-group">
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:extension base="eFaps:AbstractBase">
+                    <xsd:sequence>
+                        <xsd:element name="definition" type="eFaps:definition_user-group" maxOccurs="unbounded" minOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:extension>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
+
+
     <xsd:element name="help-menu">
         <xsd:complexType>
             <xsd:complexContent>
@@ -719,6 +732,16 @@
                 <xsd:sequence>
                     <xsd:element name="status" type="xsd:boolean" maxOccurs="1" minOccurs="1" default="false"/>
                     <xsd:element name="global" type="xsd:boolean" maxOccurs="1" minOccurs="1" default="true"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="definition_user-group">
+        <xsd:complexContent>
+            <xsd:extension base="eFaps:AbstractDefinition">
+                <xsd:sequence>
+                    <xsd:element name="status" type="xsd:boolean" maxOccurs="1" minOccurs="1" default="false"/>
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
