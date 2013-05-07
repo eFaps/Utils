@@ -81,7 +81,13 @@
                     <id>jfrog-plugins</id>
                     <name>jfrog-plugins-dist</name>
                     <url>http://repo.jfrog.org/artifactory/repo</url>
-            </pluginRepository>
+                </pluginRepository>
+                 <pluginRepository>
+                    <id>sonatype-snapshot</id>
+                    <name>sonatype-snapshot</name>
+                    <url>http://oss.sonatype.org/content/groups/public</url>
+                    <layout>default</layout>
+                </pluginRepository>
             </pluginRepositories>
         </profile>
     </profiles>
