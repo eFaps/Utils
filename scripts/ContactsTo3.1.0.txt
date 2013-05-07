@@ -8,3 +8,20 @@ UPDATE t_cocontact
 
 ALTER TABLE t_cocontact
    ALTER COLUMN typeid SET NOT NULL;
+
+
+-- add modifier, creater etc to contacts
+
+ALTER TABLE t_cocontact ADD COLUMN creator bigint;
+ALTER TABLE t_cocontact ADD COLUMN created timestamp without time zone;
+ALTER TABLE t_cocontact ADD COLUMN modifier bigint;
+ALTER TABLE t_cocontact ADD COLUMN modified timestamp without time zone;
+
+
+update t_cocontact set created=(SELECT TIMESTAMP 'now'), modified=(SELECT TIMESTAMP 'now'),
+    creator=1, modifier=1 where id in (select id from t_cocontact)
+
+ALTER TABLE t_cocontact ALTER COLUMN creator SET NOT NULL;
+ALTER TABLE t_cocontact ALTER COLUMN created SET NOT NULL;
+ALTER TABLE t_cocontact ALTER COLUMN modifier SET NOT NULL;
+ALTER TABLE t_cocontact ALTER COLUMN modified SET NOT NULL;
