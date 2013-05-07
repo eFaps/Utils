@@ -1,0 +1,10 @@
+-- add typeid to contacts
+
+ALTER TABLE t_cocontact ADD COLUMN typeid bigint;
+
+UPDATE t_cocontact
+    set typeid = (select id from t_cmabstract where uuid = 'b072573d-8a56-49aa-9bbd-ff14fceea2f6');
+
+
+ALTER TABLE t_cocontact
+   ALTER COLUMN typeid SET NOT NULL;
