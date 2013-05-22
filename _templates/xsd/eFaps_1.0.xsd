@@ -650,6 +650,7 @@
                 <xsd:sequence>
                     <xsd:element name="type" type="xsd:string" maxOccurs="1" minOccurs="0"/>
                     <xsd:element name="field" type="eFaps:field" maxOccurs="unbounded" minOccurs="0"/>
+                    <xsd:element name="trigger" type="eFaps:trigger4Form" maxOccurs="unbounded" minOccurs="0" />
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
@@ -1178,6 +1179,23 @@
         <xsd:attribute name="relLinkAttribute" type="xsd:string" use="required" />
         <xsd:attribute name="relTypeAttribute" type="xsd:string" use="required" />
         <xsd:attribute name="multipleSelect" type="xsd:string" use="optional" />
+    </xsd:complexType>
+
+    <xsd:complexType name="trigger4Form">
+        <xsd:sequence>
+            <xsd:element name="property" type="eFaps:property" maxOccurs="unbounded" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string" use="required"/>
+        <xsd:attribute name="event" use="required">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="UI_ACCESSCHECK" />
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute name="program" type="xsd:string" use="required"/>
+        <xsd:attribute name="method" type="xsd:string" use="optional" default="execute"/>
+        <xsd:attribute name="index" type="xsd:integer" use="optional" default="1"/>
     </xsd:complexType>
 
     <xsd:complexType name="trigger4Attribute">
