@@ -63,7 +63,6 @@
                     documents.provider = org.apache.commons.vfs.provider.local.DefaultLocalFileProvider
                 </org.efaps.stores>
                 <org.efaps.transaction.timeout>9900</org.efaps.transaction.timeout>
-                <org.efaps.transaction.manager>org.objectweb.jotm.Current</org.efaps.transaction.manager>
             </properties>
             <repositories>
                 <repository>
