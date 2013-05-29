@@ -62,7 +62,9 @@
                     documents.basename = file://${basedir}/target/store,
                     documents.provider = org.apache.commons.vfs.provider.local.DefaultLocalFileProvider
                 </org.efaps.stores>
-                <org.efaps.transaction.timeout>9900</org.efaps.transaction.timeout>
+                <org.efaps.configuration.properties>
+                    org.efaps.transaction.timeout = 9900
+                </org.efaps.configuration.properties>
             </properties>
             <repositories>
                 <repository>
