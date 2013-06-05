@@ -181,6 +181,19 @@
         </xsd:complexType>
     </xsd:element>
 
+    <xsd:element name="bpm-image">
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:extension base="eFaps:AbstractBase">
+                    <xsd:sequence>
+                        <xsd:element name="definition" type="eFaps:definition_bpmimage" maxOccurs="unbounded" minOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:extension>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
+
+
     <xsd:element name="numbergenerator">
         <xsd:complexType>
             <xsd:complexContent>
@@ -666,6 +679,18 @@
             </xsd:extension>
         </xsd:complexContent>
     </xsd:complexType>
+
+    <xsd:complexType name="definition_bpmimage">
+        <xsd:complexContent>
+            <xsd:extension base="eFaps:AbstractDefinition">
+                <xsd:sequence>
+                    <xsd:element name="file" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+                    <xsd:element name="processId" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
 
     <xsd:complexType name="definition_ui-menu">
         <xsd:complexContent>
