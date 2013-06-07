@@ -1105,36 +1105,40 @@
             <xsd:extension base="xsd:string">
                 <xsd:attribute name="name" use="required">
                     <xsd:simpleType>
-                        <xsd:restriction base="xsd:string">
-                            <xsd:enumeration value="AskUser" />
-                            <xsd:enumeration value="DefaultSelected" />
-                            <xsd:enumeration value="HRef" />
-                            <xsd:enumeration value="NoUpdateAfterCOMMAND" />
-                            <xsd:enumeration value="Label" />
-                            <xsd:enumeration value="Submit" />
-                            <xsd:enumeration value="SubmitSelectedRows"/>
-                            <xsd:enumeration value="SuccessDialog" />
-                            <xsd:enumeration value="Target" />
-                            <xsd:enumeration value="TargetCmdRevise" />
-                            <xsd:enumeration value="TargetCreateType" />
-                            <xsd:enumeration value="TargetCreateClassifications" />
-                            <xsd:enumeration value="TargetConnectAttribute" />
-                            <xsd:enumeration value="TargetDefaultMenu" />
-                            <xsd:enumeration value="TargetTitle" />
-                            <xsd:enumeration value="TargetMode" />
-                            <xsd:enumeration value="TargetShowCheckBoxes" />
-                            <xsd:enumeration value="TargetShowFile" />
-                            <xsd:enumeration value="TargetStructurBrowser" />
-                            <xsd:enumeration value="TargetStructurBrowserField" />
-                            <xsd:enumeration value="TargetTableSortKey" />
-                            <xsd:enumeration value="WindowHeight" />
-                            <xsd:enumeration value="WindowWidth" />
-                        </xsd:restriction>
+                        <xsd:union memberTypes="xsd:string eFaps:property_ui-command_enum"></xsd:union>
                     </xsd:simpleType>
                 </xsd:attribute>
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
+
+    <xsd:simpleType name="property_ui-command_enum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="AskUser" />
+            <xsd:enumeration value="DefaultSelected" />
+            <xsd:enumeration value="HRef" />
+            <xsd:enumeration value="NoUpdateAfterCOMMAND" />
+            <xsd:enumeration value="Label" />
+            <xsd:enumeration value="Submit" />
+            <xsd:enumeration value="SubmitSelectedRows" />
+            <xsd:enumeration value="SuccessDialog" />
+            <xsd:enumeration value="Target" />
+            <xsd:enumeration value="TargetCmdRevise" />
+            <xsd:enumeration value="TargetCreateType" />
+            <xsd:enumeration value="TargetCreateClassifications" />
+            <xsd:enumeration value="TargetConnectAttribute" />
+            <xsd:enumeration value="TargetDefaultMenu" />
+            <xsd:enumeration value="TargetTitle" />
+            <xsd:enumeration value="TargetMode" />
+            <xsd:enumeration value="TargetShowCheckBoxes" />
+            <xsd:enumeration value="TargetShowFile" />
+            <xsd:enumeration value="TargetStructurBrowser" />
+            <xsd:enumeration value="TargetStructurBrowserField" />
+            <xsd:enumeration value="TargetTableSortKey" />
+            <xsd:enumeration value="WindowHeight" />
+            <xsd:enumeration value="WindowWidth" />
+        </xsd:restriction>
+    </xsd:simpleType>
 
     <xsd:complexType name="propertyResource">
         <xsd:sequence>
