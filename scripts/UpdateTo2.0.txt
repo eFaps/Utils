@@ -81,3 +81,8 @@ ALTER TABLE t_cmgeninst
 
 
 
+
+--add general instance for Admin_User_Person type--
+insert into t_cmgeninst (insttypeid, instid, exid, exsysid) (select 78, id, 0, 0 from v_userperson);
+
+
