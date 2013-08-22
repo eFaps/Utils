@@ -12,7 +12,7 @@ create or replace view V_ADMINTYPE as
                 T_DMTYPE.PARENTCLASSDMTYPE
             from T_DMTYPE
             join T_CMABSTRACT
-              on T_CMABSTRACT.ID = T_DMTYPE.ID
+              on T_CMABSTRACT.ID = T_DMTYPE.ID;
 
 
 update t_cmabstract set name='ParentClassType' where name='SQLCacheExpr';
