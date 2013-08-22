@@ -13,3 +13,10 @@ create or replace view V_ADMINTYPE as
             from T_DMTYPE
             join T_CMABSTRACT
               on T_CMABSTRACT.ID = T_DMTYPE.ID
+
+
+update t_cmabstract set name='ParentClassType' where name='SQLCacheExpr';
+update t_dmattribute set sqlcolumn='PARENTCLASSDMTYPE', dmattributetype=t1.dmattributetype, dmtypelink=t1.dmtypelink
+        from
+            (select dmattributetype, dmtypelink from t_dmattribute where sqlcolumn='PARENTDMTYPE'
+        ) t1 where sqlcolumn='SQLCACHEEXPR';

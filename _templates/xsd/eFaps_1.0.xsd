@@ -1189,6 +1189,7 @@
     <xsd:complexType name="typePurpose">
         <xsd:sequence>
             <xsd:element name="LinkColumn" type="xsd:string" maxOccurs="1" minOccurs="0" />
+            <xsd:element name="parent" type="xsd:string" maxOccurs="1" minOccurs="0" />
         </xsd:sequence>
         <xsd:attribute name="classification" type="xsd:boolean" />
         <xsd:attribute name="abstract" type="xsd:boolean" default="false" />
