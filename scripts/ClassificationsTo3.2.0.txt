@@ -14,6 +14,8 @@ create or replace view V_ADMINTYPE as
             join T_CMABSTRACT
               on T_CMABSTRACT.ID = T_DMTYPE.ID;
 
+ALTER TABLE v_admintype
+  OWNER TO efaps;
 
 update t_cmabstract set name='ParentClassType' where name='SQLCacheExpr';
 update t_dmattribute set sqlcolumn='PARENTCLASSDMTYPE', dmattributetype=t1.dmattributetype, dmtypelink=t1.dmtypelink
