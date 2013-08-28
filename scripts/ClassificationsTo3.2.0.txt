@@ -22,3 +22,11 @@ update t_dmattribute set sqlcolumn='PARENTCLASSDMTYPE', dmattributetype=t1.dmatt
         from
             (select dmattributetype, dmtypelink from t_dmattribute where sqlcolumn='PARENTDMTYPE'
         ) t1 where sqlcolumn='SQLCACHEEXPR';
+        
+        
+        
+        
+INSERT INTO t_cmgeninst(
+            insttypeid, instid, exid, exsysid)
+    SELECT  typeid, id, 0,0
+  FROM t_userabstract where id in (select id from v_userperson);        
