@@ -110,6 +110,52 @@
         </xsd:complexType>
     </xsd:element>
 
+
+    <xsd:element name="data-import">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="definition" type="eFaps:data-import-definition" maxOccurs="unbounded" minOccurs="1"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="data-import-definition">
+        <xsd:sequence>
+            <xsd:element name="type" type="eFaps:data-import-type" maxOccurs="1" minOccurs="1"/>    
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string" />
+        <xsd:attribute name="file" type="xsd:string"/>
+        <xsd:attribute name="headerrow" default="1" use="optional" type="xsd:positiveInteger"/>
+    </xsd:complexType>
+    
+    <xsd:complexType name="data-import-type">
+        <xsd:sequence>
+            <xsd:element name="attribute" type="eFaps:data-import-attribute" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="classification" type="eFaps:data-import-classification" minOccurs="0" maxOccurs="unbounded"/>    
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string" />
+        <xsd:attribute name="column" type="xsd:string" />
+    </xsd:complexType>
+    
+    <xsd:complexType name="data-import-classification">
+        <xsd:sequence>
+            <xsd:element name="attribute" type="eFaps:data-import-attribute" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string" />
+        <xsd:attribute name="column" type="xsd:string" />
+    </xsd:complexType>
+    
+    
+    <xsd:complexType name="data-import-attribute">
+        <xsd:sequence>
+            <xsd:element name="property" type="eFaps:property" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string" />
+        <xsd:attribute name="column" type="xsd:string" />
+        <xsd:attribute name="class" type="xsd:string" />
+        <xsd:attribute name="fixedValue" type="xsd:string" />
+    </xsd:complexType>
+    
     <xsd:element name="db-store">
         <xsd:complexType>
             <xsd:complexContent>
