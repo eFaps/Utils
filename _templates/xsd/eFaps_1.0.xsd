@@ -126,6 +126,7 @@
         <xsd:attribute name="name" type="xsd:string" />
         <xsd:attribute name="file" type="xsd:string"/>
         <xsd:attribute name="headerrow" default="1" use="optional" type="xsd:positiveInteger"/>
+        <xsd:attribute name="execute" default="true" use="optional" type="xsd:boolean"/>
     </xsd:complexType>
     
     <xsd:complexType name="data-import-type">
@@ -135,6 +136,8 @@
         </xsd:sequence>
         <xsd:attribute name="name" type="xsd:string" />
         <xsd:attribute name="column" type="xsd:string" />
+        <xsd:attribute name="validate" type="xsd:boolean" default="true"/>
+        <xsd:attribute name="validateClass" type="xsd:string"/>
     </xsd:complexType>
     
     <xsd:complexType name="data-import-classification">
@@ -143,6 +146,8 @@
         </xsd:sequence>
         <xsd:attribute name="name" type="xsd:string" />
         <xsd:attribute name="column" type="xsd:string" />
+        <xsd:attribute name="validate" type="xsd:boolean" default="true"/>
+        <xsd:attribute name="validateClass" type="xsd:string"/>
     </xsd:complexType>
     
     
@@ -154,6 +159,8 @@
         <xsd:attribute name="column" type="xsd:string" />
         <xsd:attribute name="class" type="xsd:string" />
         <xsd:attribute name="fixedValue" type="xsd:string" />
+        <xsd:attribute name="validateClass" type="xsd:string"/>
+        <xsd:attribute name="validate" type="xsd:boolean" default="true"/>
     </xsd:complexType>
     
     <xsd:element name="db-store">
