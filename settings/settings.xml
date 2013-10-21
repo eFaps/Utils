@@ -67,6 +67,15 @@
                 </org.efaps.configuration.properties>
             </properties>
             <repositories>
+                <repository >
+                    <id>temp-repository</id>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </snapshots>
+                    <url>file://${basedir}/src/settings/tempRepo</url>
+                </repository >
                 <repository>
                     <id>snapshot</id>
                     <releases>
