@@ -722,6 +722,7 @@
                     <xsd:element name="type" type="xsd:string" maxOccurs="1" minOccurs="0"/>
                     <xsd:element name="field" type="eFaps:field" maxOccurs="unbounded" minOccurs="0"/>
                     <xsd:element name="trigger" type="eFaps:trigger4Form" maxOccurs="unbounded" minOccurs="0" />
+                    <xsd:element name="property" type="eFaps:property_ui-form" maxOccurs="unbounded" minOccurs="0"/>
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
@@ -1157,6 +1158,24 @@
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
+
+    <xsd:complexType name="property_ui-form">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="name" use="required">
+                    <xsd:simpleType>
+                        <xsd:union memberTypes="xsd:string eFaps:property_ui-form_enum"></xsd:union>
+                    </xsd:simpleType>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+     <xsd:simpleType name="property_ui-form_enum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Weight" />
+        </xsd:restriction>
+    </xsd:simpleType>
 
     <xsd:complexType name="property_ui-command">
         <xsd:simpleContent>
