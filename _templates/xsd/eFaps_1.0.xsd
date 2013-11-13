@@ -128,6 +128,7 @@
         <xsd:attribute name="keyColumn"     type="xsd:string"           use="optional"/>
         <xsd:attribute name="headerrow"     type="xsd:positiveInteger"  use="optional" default="1"/>
         <xsd:attribute name="execute"       type="xsd:boolean"          use="optional" default="true"/>
+        <xsd:attribute name="force"         type="xsd:boolean"          use="optional" default="false"/>
         <xsd:attribute name="accessCheck"   type="xsd:boolean"          use="optional" default="true"/>
         <xsd:attribute name="trigger"       type="xsd:boolean"          use="optional" default="true"/>
     </xsd:complexType>
