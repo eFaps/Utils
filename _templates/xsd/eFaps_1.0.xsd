@@ -204,14 +204,6 @@
         </xsd:complexType>
     </xsd:element>
 
-    <xsd:element name="import">
-        <xsd:complexType>
-            <xsd:sequence>
-                <xsd:element name="object" type="eFaps:import_object" maxOccurs="unbounded" minOccurs="1"/>
-            </xsd:sequence>
-        </xsd:complexType>
-    </xsd:element>
-
     <xsd:element name="install">
         <xsd:complexType>
             <xsd:sequence>
@@ -433,9 +425,20 @@
     <xsd:complexType name="AbstractDefinition">
         <xsd:sequence>
             <xsd:element name="version-expression" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+            <xsd:element name="application-dependencies" type="eFaps:application-dependencies" maxOccurs="1" minOccurs="0"/>
             <xsd:element name="profiles" type="eFaps:profile" maxOccurs="1" minOccurs="0"/>
             <xsd:element name="name" type="xsd:string" maxOccurs="1" minOccurs="0"/>
             <xsd:element name="parent" type="xsd:string" maxOccurs="1" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="application-dependencies">
+        <xsd:sequence>
+            <xsd:element name="application"  maxOccurs="unbounded" minOccurs="1" >
+                <xsd:complexType>
+                    <xsd:attribute name="name" use="required"/>
+                </xsd:complexType>
+            </xsd:element>
         </xsd:sequence>
     </xsd:complexType>
 
@@ -907,45 +910,6 @@
         <xsd:attribute name="name" type="xsd:string" />
         <xsd:attribute name="key" type="xsd:string" />
         <xsd:attribute name="reference" type="xsd:string" />
-    </xsd:complexType>
-
-    <xsd:complexType name="import_attribute">
-        <xsd:simpleContent>
-            <xsd:extension base="xsd:string">
-                <xsd:attribute name="name" use="required"/>
-            </xsd:extension>
-        </xsd:simpleContent>
-    </xsd:complexType>
-
-    <xsd:complexType name="import_linkattribute">
-        <xsd:sequence>
-            <xsd:element name="queryattribute" type="eFaps:import_queryattribute" maxOccurs="unbounded" minOccurs="1"/>
-        </xsd:sequence>
-        <xsd:attribute name="name" type="xsd:string" use="required" />
-        <xsd:attribute name="type" type="xsd:string" use="required" />
-        <xsd:attribute name="select" type="xsd:string" use="optional" default="ID" />
-    </xsd:complexType>
-
-    <xsd:complexType name="import_object">
-        <xsd:sequence>
-            <xsd:element name="parentattribute" type="eFaps:import_parentattribute" maxOccurs="unbounded" minOccurs="0"/>
-            <xsd:element name="attribute" type="eFaps:import_attribute" maxOccurs="unbounded" minOccurs="0"/>
-            <xsd:element name="linkattribute" type="eFaps:import_linkattribute" maxOccurs="unbounded" minOccurs="0"/>
-            <xsd:element name="object" type="eFaps:import_object" maxOccurs="unbounded" minOccurs="0"/>
-        </xsd:sequence>
-        <xsd:attribute name="type" type="xsd:string" use="required"/>
-    </xsd:complexType>
-
-    <xsd:complexType name="import_parentattribute">
-        <xsd:attribute name="name" type="xsd:string" use="required"/>
-    </xsd:complexType>
-
-    <xsd:complexType name="import_queryattribute">
-        <xsd:simpleContent>
-            <xsd:extension base="xsd:string">
-                <xsd:attribute name="name" type="xsd:string" use="required"/>
-            </xsd:extension>
-        </xsd:simpleContent>
     </xsd:complexType>
 
     <xsd:complexType name="install_script">
