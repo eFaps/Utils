@@ -469,14 +469,6 @@
         <xsd:attribute name="group" />
     </xsd:complexType>
 
-    <xsd:complexType name="assigned-role-person">
-        <xsd:simpleContent>
-            <xsd:extension base="xsd:string">
-                <xsd:attribute name="key" type="xsd:string"/>
-            </xsd:extension>
-        </xsd:simpleContent>
-    </xsd:complexType>
-
     <xsd:complexType name="attribute">
         <xsd:sequence>
             <xsd:element name="name" type="xsd:string" maxOccurs="1" minOccurs="1"/>
@@ -820,8 +812,6 @@
                     <xsd:element name="person" type="eFaps:person" maxOccurs="1" minOccurs="1"/>
                     <xsd:element name="role" type="eFaps:jaassystem_role-group" maxOccurs="1" minOccurs="1"/>
                     <xsd:element name="group" type="eFaps:jaassystem_role-group" maxOccurs="1" minOccurs="1"/>
-                    <xsd:element name="assigned-person" type="eFaps:assigned-role-person" maxOccurs="unbounded" minOccurs="0"/>
-                    <xsd:element name="assigned-role" type="eFaps:assigned-role-person" maxOccurs="unbounded" minOccurs="0"/>
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
