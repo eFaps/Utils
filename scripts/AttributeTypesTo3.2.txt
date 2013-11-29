@@ -1,0 +1,30 @@
+-- add new AttributeType "Enum"
+INSERT INTO t_cmabstract(typeid, "name", uuid, creator, created, modifier, modified)
+VALUES (2, 'Enum', 'b7c6a324-5dec-425f-b778-fa8fabf80202', 1, current_timestamp,1, current_timestamp);
+
+INSERT INTO t_dmattributetype(id, classname, classnameui)
+SELECT id, 'org.efaps.admin.datamodel.attributetype.EnumType', 'org.efaps.admin.datamodel.ui.EnumUI'
+FROM t_cmabstract
+WHERE uuid='b7c6a324-5dec-425f-b778-fa8fabf80202';
+
+
+-- add new AttributeType "BitEnum"
+INSERT INTO t_cmabstract(typeid, "name", uuid, creator, created, modifier, modified)
+VALUES (2, 'BitEnum', 'a9b1abde-d58d-4aea-8cdc-f2870111f1cd', 1, current_timestamp,1, current_timestamp);
+
+INSERT INTO t_dmattributetype(id, classname, classnameui)
+SELECT id, 'org.efaps.admin.datamodel.attributetype.BitEnumType', 'org.efaps.admin.datamodel.ui.BitEnumUI'
+FROM t_cmabstract
+WHERE uuid='a9b1abde-d58d-4aea-8cdc-f2870111f1cd';
+
+
+ALTER TABLE t_dmattribute
+  ADD COLUMN classname character(256);
+
+CREATE OR REPLACE VIEW v_adminattribute AS 
+ SELECT t_cmabstract.id, t_cmabstract.name, t_cmabstract.typeid, t_dmattribute.dmtable, t_dmattribute.dmtype, t_dmattribute.dmattributetype, t_dmattribute.dmtypelink, t_dmattribute.parentset, t_dmattribute.sqlcolumn, t_dmattribute.defaultval, t_dmattribute.dimension,t_dmattribute.classname
+   FROM t_dmattribute, t_cmabstract
+  WHERE t_cmabstract.id = t_dmattribute.id;
+
+ALTER TABLE v_adminattribute
+  OWNER TO efaps;
