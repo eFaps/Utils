@@ -509,10 +509,10 @@
             </xsd:element>
             <xsd:element name="typelink" type="xsd:string" maxOccurs="1" minOccurs="0" />
             <xsd:element name="dimensionUUID" type="xsd:string" maxOccurs="1" minOccurs="0" />
+            <xsd:element name="className" type="xsd:string" maxOccurs="1" minOccurs="0" />
             <xsd:element name="sqltable" type="xsd:string" maxOccurs="1" minOccurs="1" />
             <xsd:element name="sqlcolumn" type="xsd:string" maxOccurs="1" minOccurs="1" />
             <xsd:element name="defaultvalue" type="xsd:string" maxOccurs="1" minOccurs="0" />
-            <xsd:element name="dimensionUUID" type="xsd:string" maxOccurs="1" minOccurs="0" />
             <xsd:element name="validate" type="eFaps:validate" maxOccurs="unbounded" minOccurs="0" />
             <xsd:element name="trigger" type="eFaps:trigger4Attribute" maxOccurs="unbounded" minOccurs="0" />
             <xsd:element name="property" type="eFaps:property_attribute" maxOccurs="unbounded" minOccurs="0" />
