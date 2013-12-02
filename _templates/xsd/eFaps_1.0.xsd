@@ -475,6 +475,7 @@
             <xsd:element name="type" maxOccurs="1" minOccurs="1">
                 <xsd:simpleType>
                     <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="BitEnum" />
                         <xsd:enumeration value="Boolean" />
                         <xsd:enumeration value="Created" />
                         <xsd:enumeration value="CreatorLink" />
@@ -484,6 +485,7 @@
                         <xsd:enumeration value="DateTime" />
                         <xsd:enumeration value="Decimal" />
                         <xsd:enumeration value="DecimalWithUoM" />
+                        <xsd:enumeration value="Enum" />
                         <xsd:enumeration value="FormatedString" />
                         <xsd:enumeration value="GroupLink" />
                         <xsd:enumeration value="Integer" />
