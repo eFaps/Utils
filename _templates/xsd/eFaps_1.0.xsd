@@ -122,7 +122,7 @@
     <xsd:complexType name="data-import-definition">
         <xsd:sequence>
             <xsd:element name="identifier"  type="eFaps:data-import-identifier" maxOccurs="1" minOccurs="0"/>
-            <xsd:element name="type"        type="eFaps:data-import-type" maxOccurs="1" minOccurs="1"/>    
+            <xsd:element name="type"        type="eFaps:data-import-type" maxOccurs="1" minOccurs="1"/>
         </xsd:sequence>
         <xsd:attribute name="name"          type="xsd:string"               use="required"/>
         <xsd:attribute name="file"          type="xsd:string"               use="required"/>
@@ -134,26 +134,26 @@
         <xsd:attribute name="trigger"       type="xsd:boolean"              use="optional"  default="true"/>
         <xsd:attribute name="update"        type="xsd:boolean"              use="optional"  default="false"/>
     </xsd:complexType>
-    
+
      <xsd:complexType name="data-import-identifier">
         <xsd:sequence>
             <xsd:element name="property" type="eFaps:property" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>
         <xsd:attribute name="class"          type="xsd:string"   use="required"/>
     </xsd:complexType>
-    
-    
+
+
     <xsd:complexType name="data-import-type">
         <xsd:sequence>
             <xsd:element name="attribute" type="eFaps:data-import-attribute" minOccurs="0" maxOccurs="unbounded"/>
-            <xsd:element name="classification" type="eFaps:data-import-classification" minOccurs="0" maxOccurs="unbounded"/>    
+            <xsd:element name="classification" type="eFaps:data-import-classification" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>
         <xsd:attribute name="name"          type="xsd:string"   use="required"/>
         <xsd:attribute name="column"        type="xsd:string"   use="optional"/>
         <xsd:attribute name="validate"      type="xsd:boolean"  use="optional"  default="true"/>
         <xsd:attribute name="validateClass" type="xsd:string"   use="optional"/>
     </xsd:complexType>
-    
+
     <xsd:complexType name="data-import-classification">
         <xsd:sequence>
             <xsd:element name="attribute" type="eFaps:data-import-attribute" minOccurs="0" maxOccurs="unbounded"/>
@@ -163,7 +163,7 @@
         <xsd:attribute name="validate" type="xsd:boolean" default="true"/>
         <xsd:attribute name="validateClass" type="xsd:string"/>
     </xsd:complexType>
-    
+
     <xsd:complexType name="data-import-attribute">
         <xsd:sequence>
             <xsd:element name="property" type="eFaps:property" minOccurs="0" maxOccurs="unbounded"/>
@@ -178,7 +178,7 @@
         <xsd:attribute name="parentLink"    type="xsd:boolean"  use="optional"  default="false"/>
         <xsd:attribute name="overwrite"     type="xsd:boolean"  use="optional"  default="false"  />
     </xsd:complexType>
-    
+
     <xsd:element name="db-store">
         <xsd:complexType>
             <xsd:complexContent>
@@ -436,7 +436,8 @@
         <xsd:sequence>
             <xsd:element name="application"  maxOccurs="unbounded" minOccurs="1" >
                 <xsd:complexType>
-                    <xsd:attribute name="name" use="required"/>
+                    <xsd:attribute name="name"      type="xsd:string"   use="required"/>
+                    <xsd:attribute name="exclude"   type="xsd:boolean"  use="optional" default="false"/>
                 </xsd:complexType>
             </xsd:element>
         </xsd:sequence>
