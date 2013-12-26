@@ -491,6 +491,7 @@
                         <xsd:enumeration value="GroupLink" />
                         <xsd:enumeration value="Integer" />
                         <xsd:enumeration value="IntegerWithUoM" />
+                        <xsd:enumeration value="Jaxb" />
                         <xsd:enumeration value="Link" />
                         <xsd:enumeration value="LinkWithRanges" />
                         <xsd:enumeration value="Long" />
