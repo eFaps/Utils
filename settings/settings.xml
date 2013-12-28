@@ -126,6 +126,33 @@
                 </pluginRepository>
             </pluginRepositories>
         </profile>
+        <profile>
+            <id>jenkins</id>
+            <repositories>
+                <repository>
+                    <id>jenkins</id>
+                    <url>${env.Jenkins.Repository}</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>jenkins</id>
+                    <url>${env.Jenkins.Repository}</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
     </profiles>
     <activeProfiles>
         <activeProfile>efaps</activeProfile>
