@@ -1070,6 +1070,7 @@
                             <xsd:enumeration value="Classification" />
                             <xsd:enumeration value="ClassNameUI" />
                             <xsd:enumeration value="Columns" />
+                            <xsd:enumeration value="Collapsed"/>
                             <xsd:enumeration value="FilterType" />
                             <xsd:enumeration value="FilterRequired" />
                             <xsd:enumeration value="FilterBase" />
