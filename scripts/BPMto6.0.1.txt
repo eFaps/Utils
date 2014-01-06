@@ -3,6 +3,12 @@ UPDATE ht_task SET deployment_id='default-per-pinstance';
 SELECT setval('public.task_id_seq', (SELECT MAX(id) FROM ht_task), true);
 SELECT setval('public.process_instance_info_id_seq', (SELECT MAX(id) FROM ht_process_instance_info), true);
 
+update ht_task
+SET form_name = short_text
+from ht_i18ntext inner join ht_task t2 on ht_i18ntext.task_names_id = t2.id
+where ht_task.id = t2.id;
+
+
 DO $$
 DECLARE
     rec   record;
@@ -17,8 +23,3 @@ BEGIN
     VALUES (nextval('public.context_mapping_info_id_seq') , rec.instance_id, 1, 1);
    END LOOP;
 END $$
-
-update ht_task
-SET form_name = short_text
-from ht_i18ntext inner join ht_task t2 on ht_i18ntext.task_names_id = t2.id
-where ht_task.id = t2.id
