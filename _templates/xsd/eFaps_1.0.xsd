@@ -1226,7 +1226,7 @@
             <xsd:element name="evaluate" type="eFaps:execute" maxOccurs="1" minOccurs="0" />
             <xsd:element name="execute" type="eFaps:execute" maxOccurs="1" minOccurs="0" />
             <xsd:element name="instance" type="eFaps:execute" maxOccurs="1" minOccurs="0" />
-            <xsd:element name="validate" type="eFaps:execute" maxOccurs="1" minOccurs="0" />
+            <xsd:element name="validate" type="eFaps:validate" maxOccurs="unbounded" minOccurs="0" />
             <xsd:element name="trigger" type="eFaps:trigger4Target" maxOccurs="unbounded" minOccurs="0"/>
             <xsd:element name="command" type="xsd:string" maxOccurs="1" minOccurs="0" />
             <xsd:element name="help" type="xsd:string" maxOccurs="1" minOccurs="0" />
@@ -1388,8 +1388,9 @@
         <xsd:sequence>
             <xsd:element name="property" type="eFaps:property" maxOccurs="unbounded" minOccurs="0"/>
         </xsd:sequence>
-        <xsd:attribute name="program" type="xsd:string" use="required"/>
-        <xsd:attribute name="method" type="xsd:string" use="optional" default="execute"/>
+        <xsd:attribute name="program" type="xsd:string"             use="required"/>
+        <xsd:attribute name="method"  type="xsd:string"             use="optional" default="execute"/>
+        <xsd:attribute name="index"   type="xsd:positiveInteger"    use="optional" default="0"/>
     </xsd:complexType>
 
     <xsd:complexType name="help-target">
