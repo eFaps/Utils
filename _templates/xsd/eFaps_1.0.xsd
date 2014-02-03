@@ -1100,6 +1100,7 @@
                             <xsd:enumeration value="TargetStructurBrowserField"/>
                             <xsd:enumeration value="TargetStructurBrowserForceExpand"/>
                             <xsd:enumeration value="TargetShowCheckBoxes"/>
+                            <xsd:enumeration value="TargetDeactivateDnD" />
                             <xsd:enumeration value="Width" />
                         </xsd:restriction>
                     </xsd:simpleType>
@@ -1182,6 +1183,7 @@
             <xsd:enumeration value="TargetStructurBrowser" />
             <xsd:enumeration value="TargetStructurBrowserField" />
             <xsd:enumeration value="TargetTableSortKey" />
+            <xsd:enumeration value="TargetDeactivateDnD" />
             <xsd:enumeration value="WindowHeight" />
             <xsd:enumeration value="WindowWidth" />
         </xsd:restriction>
