@@ -1285,6 +1285,9 @@
         <xsd:attribute name="event" use="required">
             <xsd:simpleType>
                 <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="READ_VALUE"/>
+                    <xsd:enumeration value="UPDATE_VALUE"/>
+                    <xsd:enumeration value="INSERT_VALUE"/>
                     <xsd:enumeration value="RATE_VALUE" />
                     <xsd:enumeration value="RANGE_VALUE" />
                     <xsd:enumeration value="VALIDATE" />
