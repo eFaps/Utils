@@ -1,0 +1,8 @@
+ALTER TABLE t_prodinventory
+  ADD COLUMN typeid bigint;
+
+UPDATE t_prodinventory
+   SET typeid = (select id from t_cmabstract  where UUID='de159d46-cafd-48b9-9113-bb40ce7ef1ee');
+
+ALTER TABLE t_prodinventory
+   ALTER COLUMN typeid SET NOT NULL;
