@@ -1101,6 +1101,8 @@
                             <xsd:enumeration value="TargetStructurBrowserForceExpand"/>
                             <xsd:enumeration value="TargetShowCheckBoxes"/>
                             <xsd:enumeration value="TargetDeactivateDnD" />
+                            <xsd:enumeration value="UIProvider"/>
+                            <xsd:enumeration value="UIType"/>
                             <xsd:enumeration value="Width" />
                         </xsd:restriction>
                     </xsd:simpleType>
