@@ -1,0 +1,12 @@
+--Accounting_Transaction2SalesDocument
+INSERT INTO t_acctransaction2object(
+            typeid, fromid, toid, creator, created, modifier, modified)
+   SELECT (select id from t_cmabstract  where uuid='6ddbbc38-a302-4a3e-9c9b-80a9e4762e80'), transid, docid, 1,current_timestamp,1,current_timestamp
+  FROM t_acctransactionclassdoc;
+
+
+--Accounting_Transaction2PaymentDocument
+INSERT INTO t_acctransaction2object(
+            typeid, fromid, toid, creator, created, modifier, modified)
+   SELECT (select id from t_cmabstract  where uuid='a6d15281-15fe-4349-9f12-43cf6b121d32'), transid, paydocid, 1,current_timestamp,1,current_timestamp
+  FROM t_acctransactionclasspay;
