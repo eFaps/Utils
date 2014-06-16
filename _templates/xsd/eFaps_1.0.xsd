@@ -544,6 +544,7 @@
     <xsd:complexType name="bundle">
         <xsd:attribute name="name" type="xsd:string"/>
         <xsd:attribute name="sequence" type="xsd:string"/>
+        <xsd:attribute name="cacheOnStart" type="xsd:boolean" default="false" use="optional"/>
     </xsd:complexType>
 
     <xsd:complexType name="childs">
