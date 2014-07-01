@@ -873,6 +873,7 @@
         </xsd:sequence>
         <xsd:attribute name="program" type="xsd:string" />
         <xsd:attribute name="method" type="xsd:string" use="optional" default="execute" />
+        <xsd:attribute name="index" type="xsd:nonNegativeInteger" use="optional" default="0"/>
     </xsd:complexType>
 
     <xsd:complexType name="field">
@@ -1229,7 +1230,7 @@
             <xsd:element name="search" type="xsd:string" maxOccurs="1" minOccurs="0" />
             <xsd:element name="table" type="xsd:string" maxOccurs="1" minOccurs="0" />
             <xsd:element name="evaluate" type="eFaps:execute" maxOccurs="1" minOccurs="0" />
-            <xsd:element name="execute" type="eFaps:execute" maxOccurs="1" minOccurs="0" />
+            <xsd:element name="execute" type="eFaps:execute" maxOccurs="unbounded" minOccurs="0" />
             <xsd:element name="instance" type="eFaps:execute" maxOccurs="1" minOccurs="0" />
             <xsd:element name="validate" type="eFaps:validate" maxOccurs="unbounded" minOccurs="0" />
             <xsd:element name="trigger" type="eFaps:trigger4Target" maxOccurs="unbounded" minOccurs="0"/>
