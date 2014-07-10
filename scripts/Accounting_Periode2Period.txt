@@ -1,0 +1,6 @@
+ALTER TABLE t_accaccount RENAME periodeid  TO periodid;
+ALTER TABLE t_acccase RENAME periodeid  TO periodid;
+ALTER TABLE t_acclabel RENAME periodeid  TO periodid;
+ALTER TABLE t_accperiode RENAME TO t_accperiod;
+ALTER TABLE t_accreport RENAME periodeid  TO periodid;
+ALTER TABLE t_acctransaction RENAME periodeid  TO periodid;
