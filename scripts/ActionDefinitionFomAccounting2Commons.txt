@@ -10,3 +10,8 @@ ALTER TABLE t_erpactiondef
 ALTER TABLE t_erpactiondef
   ADD COLUMN status bigint;
 
+ALTER SEQUENCE t_accactiondef_id_seq
+  RENAME TO t_erpactiondef_id_seq;
+
+ALTER SEQUENCE t_accaction2object_id_seq
+  RENAME TO t_erpactiondef2object_id_seq;
