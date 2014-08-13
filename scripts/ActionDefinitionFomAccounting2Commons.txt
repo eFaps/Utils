@@ -1,0 +1,12 @@
+-- change the tables
+ALTER TABLE t_accactiondef
+  RENAME TO t_erpactiondef;
+
+ALTER TABLE t_accaction2object
+  RENAME TO t_erpactiondef2object;
+
+ALTER TABLE t_erpactiondef
+  DROP COLUMN active;
+ALTER TABLE t_erpactiondef
+  ADD COLUMN status bigint;
+
