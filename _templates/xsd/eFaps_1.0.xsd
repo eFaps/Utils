@@ -1367,7 +1367,7 @@
                     <xsd:enumeration value="UI_FIELD_AUTOCOMPLETE" />
                     <xsd:enumeration value="UI_FIELD_CMD" />
                     <xsd:enumeration value="UI_FIELD_FORMAT" />
-                    <xsd:enumeration value="UI_FIELD_INSTANCE"/>
+                    <xsd:enumeration value="UI_FIELD_ALTINST"/>
                     <xsd:enumeration value="UI_FIELD_VALUE" />
                     <xsd:enumeration value="UI_FIELD_UPDATE" />
                     <xsd:enumeration value="UI_TABLE_EVALUATE" />
