@@ -154,6 +154,18 @@
         <xsd:attribute name="validateClass" type="xsd:string"   use="optional"/>
     </xsd:complexType>
 
+    <xsd:element name="common-msgphrase">
+        <xsd:complexType>
+        <xsd:complexContent>
+                <xsd:extension base="eFaps:AbstractBase">
+                    <xsd:sequence>
+                        <xsd:element name="definition" type="eFaps:definition_msgphrase" maxOccurs="unbounded" minOccurs="1" />
+                    </xsd:sequence>
+                </xsd:extension>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
+
     <xsd:complexType name="data-import-classification">
         <xsd:sequence>
             <xsd:element name="attribute" type="eFaps:data-import-attribute" minOccurs="0" maxOccurs="unbounded"/>
@@ -613,6 +625,28 @@
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="definition_msgphrase">
+        <xsd:complexContent>
+            <xsd:extension base="eFaps:AbstractDefinition">
+                <xsd:sequence>
+                   <xsd:element name="label" type="eFaps:msgphrase_label" maxOccurs="unbounded" minOccurs="1"></xsd:element>
+                   <xsd:element name="argument" type="eFaps:msgphrase_argument" maxOccurs="unbounded" minOccurs="1"></xsd:element>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="msgphrase_label">
+        <xsd:attribute name="language"  type="xsd:string"             use="optional"/>
+        <xsd:attribute name="company"   type="xsd:string"             use="optional"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="msgphrase_argument">
+        <xsd:attribute name="index"     type="xsd:nonNegativeInteger" use="required"/>
+        <xsd:attribute name="language"  type="xsd:string"             use="optional"/>
+        <xsd:attribute name="company"   type="xsd:string"             use="optional"/>
     </xsd:complexType>
 
     <xsd:complexType name="definition_access-type">
