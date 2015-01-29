@@ -638,15 +638,23 @@
         </xsd:complexContent>
     </xsd:complexType>
 
-    <xsd:complexType name="msgphrase_label">
-        <xsd:attribute name="language"  type="xsd:string"             use="optional"/>
-        <xsd:attribute name="company"   type="xsd:string"             use="optional"/>
+    <xsd:complexType name="msgphrase_label" >
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="language"  type="xsd:string"             use="optional"/>
+                <xsd:attribute name="company"   type="xsd:string"             use="optional"/>
+            </xsd:extension>
+        </xsd:simpleContent>
     </xsd:complexType>
 
     <xsd:complexType name="msgphrase_argument">
-        <xsd:attribute name="index"     type="xsd:nonNegativeInteger" use="required"/>
-        <xsd:attribute name="language"  type="xsd:string"             use="optional"/>
-        <xsd:attribute name="company"   type="xsd:string"             use="optional"/>
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="index"     type="xsd:nonNegativeInteger" use="required"/>
+                <xsd:attribute name="language"  type="xsd:string"             use="optional"/>
+                <xsd:attribute name="company"   type="xsd:string"             use="optional"/>
+            </xsd:extension>
+        </xsd:simpleContent>
     </xsd:complexType>
 
     <xsd:complexType name="definition_access-type">
