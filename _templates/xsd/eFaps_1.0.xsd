@@ -1122,6 +1122,7 @@
                             <xsd:enumeration value="ModePrint" />
                             <xsd:enumeration value="ModeSearch" />
                             <xsd:enumeration value="ModeView" />
+                            <xsd:enumeration value="MsgPhrase" />
                             <xsd:enumeration value="Order" />
                             <xsd:enumeration value="Phrase" />
                             <xsd:enumeration value="Required" />
