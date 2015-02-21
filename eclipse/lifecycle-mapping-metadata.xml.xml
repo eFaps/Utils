@@ -41,5 +41,18 @@
         <ignore />
       </action>
     </pluginExecution>
+    <pluginExecution>
+      <pluginExecutionFilter>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>wagon-maven-plugin</artifactId>
+        <versionRange>1.0</versionRange>
+        <goals>
+          <goal>download-single</goal>
+        </goals>
+      </pluginExecutionFilter>
+      <action>
+        <ignore />
+      </action>
+    </pluginExecution>
   </pluginExecutions>
 </lifecycleMappingMetadata>
