@@ -870,9 +870,29 @@
                 <xsd:sequence>
                     <xsd:element name="status" type="xsd:boolean" maxOccurs="1" minOccurs="1" default="false"/>
                     <xsd:element name="global" type="xsd:boolean" maxOccurs="1" minOccurs="1" default="true"/>
+                    <xsd:element name="access" type="eFaps:definition_user-role_access" maxOccurs="1" minOccurs="0"/>
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="definition_user-role_access">
+        <xsd:sequence>
+            <xsd:element name="datamodel" type="eFaps:definition_user-role_access_datamodel" maxOccurs="1" minOccurs="0" />
+            <xsd:element name="userinterface" type="eFaps:definition_user-role_access_userinterface" maxOccurs="1" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="definition_user-role_access_datamodel">
+        <xsd:sequence>
+            <xsd:element name="accessset" type="xsd:string" maxOccurs="unbounded" minOccurs="1" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="definition_user-role_access_userinterface">
+        <xsd:sequence>
+            <xsd:element name="cmd" type="xsd:string" maxOccurs="unbounded" minOccurs="1" />
+        </xsd:sequence>
     </xsd:complexType>
 
     <xsd:complexType name="definition_user-group">
