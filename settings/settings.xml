@@ -127,6 +127,9 @@
             </pluginRepositories>
         </profile>
         <profile>
+            <id>eql</id>
+        </profile>
+         <profile>
             <id>jenkins</id>
             <repositories>
                 <repository>
