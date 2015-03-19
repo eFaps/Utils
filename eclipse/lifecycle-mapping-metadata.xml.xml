@@ -54,5 +54,18 @@
         <ignore />
       </action>
     </pluginExecution>
+    <pluginExecution>
+      <pluginExecutionFilter>
+        <groupId>org.fornax.toolsupport</groupId>
+        <artifactId>fornax-oaw-m2-plugin</artifactId>
+        <versionRange>3.5.1</versionRange>
+        <goals>
+          <goal>run-workflow</goal>
+        </goals>
+      </pluginExecutionFilter>
+      <action>
+        <ignore />
+      </action>
+    </pluginExecution>
   </pluginExecutions>
 </lifecycleMappingMetadata>
