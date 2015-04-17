@@ -1,0 +1,21 @@
+
+INSERT INTO t_cmapp( name, creator, created, modifier, modified)
+SELECT name, creator, created, modifier, modified
+FROM t_cmversion where revision = 1;
+
+INSERT INTO t_cmappversion( appid, revision, creator, created, modifier, modified)
+SELECT t_cmapp.id, revision, t_cmversion.creator, t_cmversion.created, t_cmversion.modifier, t_cmversion.modified
+FROM t_cmversion  left join t_cmapp  on t_cmapp.name = t_cmversion.name;
+
+ALTER TABLE t_cneqlhis
+  RENAME TO "t_cmhistoryeql";
+
+ALTER TABLE t_cm_history
+  RENAME TO "t_cmhistory";
+
+ALTER SEQUENCE t_cm_history_id_seq
+  RENAME TO t_cmhistory_id_seq;
+
+ALTER SEQUENCE t_cneqlhis_id_seq
+  RENAME TO t_cmhistoryeql_id_seq;
+
