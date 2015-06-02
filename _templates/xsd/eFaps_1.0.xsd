@@ -550,6 +550,7 @@
             <xsd:element name="sqlcolumn" type="xsd:string" maxOccurs="1" minOccurs="1"/>
             <xsd:element name="uuid" type="xsd:string" maxOccurs="1" minOccurs="1" nillable="false"/>
             <xsd:element name="attribute" type="eFaps:attribute" maxOccurs="unbounded" minOccurs="0"/>
+            <xsd:element name="trigger" type="eFaps:trigger4AttributeSet" maxOccurs="unbounded" minOccurs="0" />
         </xsd:sequence>
     </xsd:complexType>
 
@@ -1445,6 +1446,31 @@
                     <xsd:enumeration value="UI_FIELD_UPDATE" />
                     <xsd:enumeration value="UI_TABLE_EVALUATE" />
                     <xsd:enumeration value="UI_VALIDATE" />
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute name="program" type="xsd:string" use="required"/>
+        <xsd:attribute name="method" type="xsd:string" use="optional" default="execute"/>
+        <xsd:attribute name="index" type="xsd:integer" use="optional" default="1"/>
+    </xsd:complexType>
+
+     <xsd:complexType name="trigger4AttributeSet">
+        <xsd:sequence>
+            <xsd:element name="property" type="eFaps:property" maxOccurs="unbounded" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string" use="required"/>
+        <xsd:attribute name="event" use="required">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="DELETE_OVERRIDE" />
+                    <xsd:enumeration value="DELETE_POST" />
+                    <xsd:enumeration value="DELETE_PRE" />
+                    <xsd:enumeration value="INSERT_OVERRIDE" />
+                    <xsd:enumeration value="INSERT_POST" />
+                    <xsd:enumeration value="INSERT_PRE" />
+                    <xsd:enumeration value="UPDATE_OVERRIDE" />
+                    <xsd:enumeration value="UPDATE_POST" />
+                    <xsd:enumeration value="UPDATE_PRE" />
                 </xsd:restriction>
             </xsd:simpleType>
         </xsd:attribute>
