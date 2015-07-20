@@ -10,9 +10,8 @@
     xmlns:resources="http://www.eclipse.org/oomph/resources/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
-    xmlns:setup.targlets="http://www.eclipse.org/oomph/setup/targlets/1.0"
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
-    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/resources/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Resources.ecore http://www.eclipse.org/oomph/setup/targlets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/resources/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Resources.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
     name="efaps"
     label="eFaps">
   <setupTask
@@ -41,56 +40,38 @@
       name="eclipse.target.platform"
       defaultValue="Mars"
       storageURI="scope://Workspace"/>
-  <setupTask
-      xsi:type="setup.p2:P2Task">
-    <requirement
-        name="org.efaps.eclipse.plugin.feature.group"/>
-    <repository
-        url="http://efaps-eclipse-site.efaps.org"/>
-    <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
-  </setupTask>
-  <setupTask
-      xsi:type="setup.workingsets:WorkingSetTask">
-    <workingSet
-        name="Kernel">
-      <predicate
-          xsi:type="predicates:OrPredicate">
-        <operand
-            xsi:type="predicates:NamePredicate"
-            pattern="eFaps-API"/>
-        <operand
-            xsi:type="predicates:NamePredicate"
-            pattern="eFaps-CLI"/>
-        <operand
-            xsi:type="predicates:NamePredicate"
-            pattern="eFaps-EQL"/>
-        <operand
-            xsi:type="predicates:NamePredicate"
-            pattern="eFaps-JSON"/>
-        <operand
-            xsi:type="predicates:NamePredicate"
-            pattern="eFaps-Kernel-Install"/>
-        <operand
-            xsi:type="predicates:NamePredicate"
-            pattern="eFaps-Kernel"/>
-        <operand
-            xsi:type="predicates:NamePredicate"
-            pattern="eFaps-Parent"/>
-        <operand
-            xsi:type="predicates:NamePredicate"
-            pattern="eFaps-Tests"/>
-        <operand
-            xsi:type="predicates:NamePredicate"
-            pattern="eFaps-WebApp"/>
-        <operand
-            xsi:type="predicates:NamePredicate"
-            pattern="eFaps-WebApp-Install"/>
-      </predicate>
-    </workingSet>
-    <description>The dynamic working sets for ${scope.project.label}</description>
-  </setupTask>
   <stream name="master"
       label="Master">
+    <setupTask
+        xsi:type="setup.p2:P2Task">
+      <requirement
+          name="AnyEditTools.feature.group"/>
+      <requirement
+          name="org.efaps.eclipse.plugin.feature.group"/>
+      <requirement
+          name="org.efaps.eclipse.m2e.connector.feature.group"/>
+      <requirement
+          name="jp.gr.java_conf.ussiy.app.propedit.feature.group"/>
+      <requirement
+          name="org.testng.eclipse.feature.group"/>
+      <requirement
+          name="org.eclipse.wst.web_ui.feature.feature.group"/>
+      <repository
+          url="http://efaps-eclipse-site.efaps.org"/>
+      <repository
+          url="http://jautodoc.sourceforge.net/update/"/>
+      <repository
+          url="http://beust.com/eclipse"/>
+      <repository
+          url="http://propedit.sourceforge.jp/eclipse/updates/"/>
+      <repository
+          url="http://andrei.gmxhome.de/eclipse/"/>
+      <repository
+          url="http://eclipse-cs.sourceforge.net/update/"/>
+      <repository
+          url="http://download.eclipse.org/webtools/repository/luna"/>
+      <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
+    </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
         name="Gits">
@@ -435,35 +416,6 @@
       <description>eFaps Git Repositories</description>
     </setupTask>
     <setupTask
-        xsi:type="setup.targlets:TargletTask">
-      <targlet
-          name="${scope.project.label}"
-          activeRepositoryList="${eclipse.target.platform}">
-        <requirement
-            name="org.eclipse.sdk.feature.group"/>
-        <repositoryList
-            name="Mars">
-          <repository
-              url="http://download.eclipse.org/releases/mars"/>
-        </repositoryList>
-        <repositoryList
-            name="Luna">
-          <repository
-              url="http://download.eclipse.org/releases/luna"/>
-        </repositoryList>
-        <repositoryList
-            name="Kepler">
-          <repository
-              url="http://download.eclipse.org/releases/kepler"/>
-        </repositoryList>
-        <repositoryList
-            name="Juno">
-          <repository
-              url="http://download.eclipse.org/releases/juno"/>
-        </repositoryList>
-      </targlet>
-    </setupTask>
-    <setupTask
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
           rootFolder="${git.kernel.clone.location}">
@@ -480,6 +432,46 @@
         <projectFactory
             xsi:type="resources:EclipseProjectFactory"/>
       </sourceLocator>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.workingsets:WorkingSetTask">
+      <workingSet
+          name="Kernel">
+        <predicate
+            xsi:type="predicates:OrPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFaps-API"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFaps-CLI"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFaps-EQL"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFaps-JSON"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFaps-Kernel-Install"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFaps-Kernel"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFaps-Parent"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFaps-Tests"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFaps-WebApp"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFaps-WebApp-Install"/>
+        </predicate>
+      </workingSet>
+      <description>The dynamic working sets for ${scope.project.label}</description>
     </setupTask>
   </stream>
   <logicalProjectContainer
