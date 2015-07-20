@@ -91,6 +91,28 @@
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
+          id="git.cli.clone"
+          remoteURI="eFaps/eFaps-CLI"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>github.remoteURIs</value>
+          </detail>
+          <detail
+              key="label">
+            <value>eFaps-CLI repository</value>
+          </detail>
+          <detail
+              key="target">
+            <value>remoteURI</value>
+          </detail>
+        </annotation>
+        <description>eFaps-CLI Repository</description>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
           id="git.eql.clone"
           remoteURI="eFaps/eFaps-EQL"
           pushURI="">
@@ -110,6 +132,28 @@
           </detail>
         </annotation>
         <description>eFaps-EQL Repository</description>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.json.clone"
+          remoteURI="eFaps/eFaps-JSON"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>github.remoteURIs</value>
+          </detail>
+          <detail
+              key="label">
+            <value>eFaps-JSON repository</value>
+          </detail>
+          <detail
+              key="target">
+            <value>remoteURI</value>
+          </detail>
+        </annotation>
+        <description>eFaps-JSON Repository</description>
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
@@ -154,6 +198,94 @@
           </detail>
         </annotation>
         <description>eFaps-Kernel Repository</description>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.parent.clone"
+          remoteURI="eFaps/eFaps-Parent"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>github.remoteURIs</value>
+          </detail>
+          <detail
+              key="label">
+            <value>eFaps-Parent repository</value>
+          </detail>
+          <detail
+              key="target">
+            <value>remoteURI</value>
+          </detail>
+        </annotation>
+        <description>eFaps-Parent Repository</description>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.tests.clone"
+          remoteURI="eFaps/eFaps-Tests"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>github.remoteURIs</value>
+          </detail>
+          <detail
+              key="label">
+            <value>eFaps-Tests repository</value>
+          </detail>
+          <detail
+              key="target">
+            <value>remoteURI</value>
+          </detail>
+        </annotation>
+        <description>eFaps-Tests Repository</description>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.webapp.clone"
+          remoteURI="eFaps/eFaps-WebApp"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>github.remoteURIs</value>
+          </detail>
+          <detail
+              key="label">
+            <value>eFaps-WebApp repository</value>
+          </detail>
+          <detail
+              key="target">
+            <value>remoteURI</value>
+          </detail>
+        </annotation>
+        <description>eFaps-WebApp Repository</description>
+      </setupTask>
+       <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.webapp-install.clone"
+          remoteURI="eFaps/eFaps-WebApp-Install"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>github.remoteURIs</value>
+          </detail>
+          <detail
+              key="label">
+            <value>eFaps-WebApp-Install repository</value>
+          </detail>
+          <detail
+              key="target">
+            <value>remoteURI</value>
+          </detail>
+        </annotation>
+        <description>eFaps-WebApp-Install Repository</description>
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
