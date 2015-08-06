@@ -5,15 +5,165 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
     xmlns:jdt="http://www.eclipse.org/oomph/setup/jdt/1.0"
+    xmlns:mylyn="http://www.eclipse.org/oomph/setup/mylyn/1.0"
     xmlns:predicates="http://www.eclipse.org/oomph/predicates/1.0"
     xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
     xmlns:resources="http://www.eclipse.org/oomph/resources/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
-    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/resources/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Resources.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/mylyn/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Mylyn.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/resources/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Resources.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
     name="efaps"
     label="eFaps">
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="Global Variables">
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="git.author.name"
+        label="Eclipse author name for Git/Gerrit"
+        documentation="The Eclipse author name for Git/Gerrit commits.  Use 'Anonymous' if you're not a registered Eclipse Git author or don't plan to commit to Git.">
+      <description>The author name used for Git/Gerrit commits</description>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="git.author.email"
+        label="Eclipse author email for Git/Gerrit"
+        documentation="The Eclipse author email for Git/Gerrit commits.  Use 'anonymous@example.com' if you're not a registered Eclipse Git author or don't plan to commit to Git.">
+      <description>The email address associated with Git/Gerrit commits</description>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        type="PASSWORD"
+        name="github.user.password"
+        value=""
+        label="Password for GitHub"
+        documentation="The Eclipse password for Bugzilla/Hudson.  Leave empty if you don't have an account or don't plan to submit bugs.">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/PasswordVerification">
+        <detail
+            key="type">
+          <value>form</value>
+        </detail>
+        <detail
+            key="form.url">
+          <value>https://dev.eclipse.org/site_login/</value>
+        </detail>
+        <detail
+            key="form.cookie">
+          <value>ECLIPSESESSION</value>
+        </detail>
+        <detail
+            key="form.parameters">
+          <value>username password submit</value>
+        </detail>
+        <detail
+            key="form.secure.parameters">
+          <value>password</value>
+        </detail>
+        <detail
+            key="form.filter">
+          <value>username=anonymous\&amp;.*</value>
+        </detail>
+        <detail
+            key="form.parameter.username">
+          <value>$${git.user.id}</value>
+        </detail>
+        <detail
+            key="form.parameter.password">
+          <value>$${value}</value>
+        </detail>
+        <detail
+            key="form.parameter.submit">
+          <value>Login</value>
+        </detail>
+        <detail
+            key="form.ok">
+          <value>Valid password for $${form.parameter.username} at $${form.url}.</value>
+        </detail>
+        <detail
+            key="form.info">
+          <value>Validate the password for $${form.parameter.username} at $${form.url}.</value>
+        </detail>
+        <detail
+            key="form.warning">
+          <value>
+            Unable to validate the password for $${form.parameter.username} because $${form.url} is
+            unreachable.
+          </value>
+        </detail>
+        <detail
+            key="form.error">
+          <value>Invalid password for $${form.parameter.username} at $${form.url}.</value>
+        </detail>
+      </annotation>
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/PasswordVerification">
+        <detail
+            key="type">
+          <value>form</value>
+        </detail>
+        <detail
+            key="form.url">
+          <value>https://git.eclipse.org/r/login/</value>
+        </detail>
+        <detail
+            key="form.parameters">
+          <value>username password submit</value>
+        </detail>
+        <detail
+            key="form.secure.parameters">
+          <value>password</value>
+        </detail>
+        <detail
+            key="form.filter">
+          <value>username=anonymous\&amp;.*</value>
+        </detail>
+        <detail
+            key="form.parameter.username">
+          <value>$${git.user.id}</value>
+        </detail>
+        <detail
+            key="form.parameter.password">
+          <value>$${value}</value>
+        </detail>
+        <detail
+            key="form.parameter.submit">
+          <value>Sign In</value>
+        </detail>
+        <detail
+            key="form.verification.url">
+          <value>https://git.eclipse.org/r/accounts/$${git.user.id}</value>
+        </detail>
+        <detail
+            key="form.verification.matches">
+          <value>.*&quot;email&quot;: &quot;$${form.parameter.username}&quot;.*</value>
+        </detail>
+        <detail
+            key="form.ok">
+          <value>Valid password for account $${git.user.id} of $${form.parameter.username} at $${form.url}.</value>
+        </detail>
+        <detail
+            key="form.info">
+          <value>
+            Validate the password for account $${git.user.id} of $${form.parameter.username} at
+            $${form.url}.
+          </value>
+        </detail>
+        <detail
+            key="form.warning">
+          <value>
+            Unable to validate the password for account $${git.user.id} of $${form.parameter.username}
+            because $${form.url} is unreachable.
+          </value>
+        </detail>
+        <detail
+            key="form.error">
+          <value>Invalid password for account $${git.user.id} of $${form.parameter.username} at $${form.url}.</value>
+        </detail>
+      </annotation>
+    </setupTask>
+  </setupTask>
   <setupTask
       xsi:type="jdt:JRETask"
       version="JavaSE-1.7"
@@ -472,6 +622,19 @@
         </predicate>
       </workingSet>
       <description>The dynamic working sets for ${scope.project.label}</description>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="Task List">
+      <setupTask
+          xsi:type="mylyn:MylynQueriesTask"
+          connectorKind="github"
+          repositoryURL="http://github.com/eFaps/eFapsApp-Commons"
+          userID="${github.user.id}"
+          password="${github.user.password}">
+        <query
+            summary="eFapsApp-Commons"/>
+      </setupTask>
     </setupTask>
   </stream>
   <logicalProjectContainer
