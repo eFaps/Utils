@@ -88,6 +88,8 @@
           name="org.testng.eclipse.feature.group"/>
       <requirement
           name="org.eclipse.wst.web_ui.feature.feature.group"/>
+      <requirement
+            name="net.sf.eclipsecs.feature.group"/>
       <repository
           url="http://efaps-eclipse-site.efaps.org"/>
       <repository
@@ -102,6 +104,9 @@
           url="http://eclipse-cs.sourceforge.net/update/"/>
       <repository
           url="http://download.eclipse.org/webtools/repository/luna"/>
+      <repository
+          url="http://eclipse-cs.sf.net/"/>
+
       <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
     </setupTask>
     <setupTask
@@ -536,19 +541,13 @@
           repositoryURL="https://github.com/eFaps/eFapsApp-Commons"
           userID="${github.user.id}"
           password="${github.user.password}">
-
         <query
             summary="eFapsApp-Commons">
-
           <attribute
               key="state"
               value="open::"  />
-
-
         </query>
       </setupTask>
-
-
     </setupTask>
   </stream>
   <logicalProjectContainer
