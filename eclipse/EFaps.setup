@@ -623,19 +623,27 @@
 
         xsi:type="setup:CompoundTask"
         name="Maven Imports">
-      <setupTask
+       <setupTask
           xsi:type="maven:MavenImportTask"
-          projectNameTemplate="">
-        <sourceLocator
-            rootFolder="${git.kernel.clone.location}">
-          <projectFactory
-              xsi:type="resources:MavenProjectFactory"/>
-        </sourceLocator>
+          projectNameTemplate="eFaps-API">
         <sourceLocator
             rootFolder="${git.api.clone.location}">
           <projectFactory
               xsi:type="resources:MavenProjectFactory"/>
         </sourceLocator>
+      </setupTask>
+      <setupTask
+          xsi:type="maven:MavenImportTask"
+          projectNameTemplate="eFaps-Kernel">
+        <sourceLocator
+            rootFolder="${git.kernel.clone.location}">
+          <projectFactory
+              xsi:type="resources:MavenProjectFactory"/>
+        </sourceLocator>
+      </setupTask>
+      <setupTask
+          xsi:type="maven:MavenImportTask"
+          projectNameTemplate="eFaps-CLI">
         <sourceLocator
             rootFolder="${git.cli.clone.location}">
           <projectFactory
