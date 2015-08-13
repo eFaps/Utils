@@ -620,10 +620,9 @@
       </sourceLocator>
     </setupTask>
     <setupTask
-
         xsi:type="setup:CompoundTask"
         name="Maven Imports">
-       <setupTask
+      <setupTask
           xsi:type="maven:MavenImportTask"
           projectNameTemplate="eFaps-API">
         <sourceLocator
