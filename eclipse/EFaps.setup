@@ -554,6 +554,49 @@
       <description>eFaps Git Repositories</description>
     </setupTask>
     <setupTask
+        xsi:type="setup:CompoundTask"
+        name="Maven Imports">
+      <setupTask
+          xsi:type="maven:MavenImportTask"
+          id=""
+          projectNameTemplate="eFaps-API">
+        <sourceLocator
+            rootFolder="${git.api.clone.location}">
+          <projectFactory
+              xsi:type="resources:MavenProjectFactory"/>
+        </sourceLocator>
+      </setupTask>
+      <setupTask
+          xsi:type="maven:MavenImportTask"
+          projectNameTemplate="eFaps-Kernel">
+        <sourceLocator
+            rootFolder="${git.kernel.clone.location}">
+          <projectFactory
+              xsi:type="resources:MavenProjectFactory"/>
+        </sourceLocator>
+      </setupTask>
+      <setupTask
+          xsi:type="maven:MavenImportTask"
+          projectNameTemplate="eFaps-CLI">
+        <sourceLocator
+            rootFolder="${git.cli.clone.location}">
+          <projectFactory
+              xsi:type="resources:MavenProjectFactory"/>
+        </sourceLocator>
+      </setupTask>
+      <setupTask
+          xsi:type="maven:MavenImportTask"
+          projectNameTemplate="eFapsApp-2Plan">
+        <sourceLocator
+            rootFolder="${git.2plan.clone.location}">
+          <annotation/>
+          <projectFactory
+              xsi:type="resources:MavenProjectFactory"/>
+        </sourceLocator>
+        <description>eFapsApp-2Plan</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
           rootFolder="${git.kernel.clone.location}">
@@ -574,29 +617,6 @@
           rootFolder="${git.2plan.clone.location}">
         <projectFactory
             xsi:type="resources:EclipseProjectFactory"/>
-      </sourceLocator>
-    </setupTask>
-    <setupTask
-        xsi:type="maven:MavenImportTask">
-      <sourceLocator
-          rootFolder="${git.kernel.clone.location}">
-        <projectFactory
-            xsi:type="resources:MavenProjectFactory"/>
-      </sourceLocator>
-      <sourceLocator
-          rootFolder="${git.api.clone.location}">
-        <projectFactory
-            xsi:type="resources:MavenProjectFactory"/>
-      </sourceLocator>
-      <sourceLocator
-          rootFolder="${git.cli.clone.location}">
-        <projectFactory
-            xsi:type="resources:MavenProjectFactory"/>
-      </sourceLocator>
-      <sourceLocator
-          rootFolder="${git.2plan.clone.location}">
-        <projectFactory
-            xsi:type="resources:MavenProjectFactory"/>
       </sourceLocator>
     </setupTask>
     <setupTask
