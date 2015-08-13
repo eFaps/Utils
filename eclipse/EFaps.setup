@@ -554,29 +554,6 @@
       <description>eFaps Git Repositories</description>
     </setupTask>
     <setupTask
-        xsi:type="maven:MavenImportTask">
-      <sourceLocator
-          rootFolder="${git.kernel.clone.location}">
-        <projectFactory
-            xsi:type="resources:EclipseProjectFactory"/>
-      </sourceLocator>
-      <sourceLocator
-          rootFolder="${git.api.clone.location}">
-        <projectFactory
-            xsi:type="resources:EclipseProjectFactory"/>
-      </sourceLocator>
-      <sourceLocator
-          rootFolder="${git.cli.clone.location}">
-        <projectFactory
-            xsi:type="resources:EclipseProjectFactory"/>
-      </sourceLocator>
-      <sourceLocator
-          rootFolder="${git.2plan.clone.location}">
-        <projectFactory
-            xsi:type="resources:MavenProjectFactory"/>
-      </sourceLocator>
-    </setupTask>
-    <setupTask
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
           rootFolder="${git.kernel.clone.location}">
@@ -597,6 +574,29 @@
           rootFolder="${git.2plan.clone.location}">
         <projectFactory
             xsi:type="resources:EclipseProjectFactory"/>
+      </sourceLocator>
+    </setupTask>
+    <setupTask
+        xsi:type="maven:MavenImportTask">
+      <sourceLocator
+          rootFolder="${git.kernel.clone.location}">
+        <projectFactory
+            xsi:type="resources:MavenProjectFactory"/>
+      </sourceLocator>
+      <sourceLocator
+          rootFolder="${git.api.clone.location}">
+        <projectFactory
+            xsi:type="resources:MavenProjectFactory"/>
+      </sourceLocator>
+      <sourceLocator
+          rootFolder="${git.cli.clone.location}">
+        <projectFactory
+            xsi:type="resources:MavenProjectFactory"/>
+      </sourceLocator>
+      <sourceLocator
+          rootFolder="${git.2plan.clone.location}">
+        <projectFactory
+            xsi:type="resources:MavenProjectFactory"/>
       </sourceLocator>
     </setupTask>
     <setupTask
