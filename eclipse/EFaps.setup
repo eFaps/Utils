@@ -546,7 +546,7 @@
           id="2plan.projectfile"
           excludedTriggers="BOOTSTRAP"
           predecessor="git.kernel.clone"
-          content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;projectDescription>&#xA;&#x9;&lt;name>eFaps-Kernel&lt;/name>&#xA;&#x9;&lt;comment>&lt;/comment>&#xA;&#x9;&lt;projects>&#xA;&#x9;&lt;/projects>&#xA;&#x9;&lt;buildSpec>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.jdt.core.javabuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>net.sf.eclipsecs.core.CheckstyleBuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.m2e.core.maven2Builder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&lt;/buildSpec>&#xA;&#x9;&lt;natures>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.m2e.core.maven2Nature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.jdt.core.javanature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>net.sf.eclipsecs.core.CheckstyleNature&lt;/nature>&#xA;&#x9;&lt;/natures>&#xA;&lt;/projectDescription>"
+          content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;projectDescription>&#xA;&#x9;&lt;name>eFapsApp-2Plan&lt;/name>&#xA;&#x9;&lt;comment>&lt;/comment>&#xA;&#x9;&lt;projects>&#xA;&#x9;&lt;/projects>&#xA;&#x9;&lt;buildSpec>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.jdt.core.javabuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>net.sf.eclipsecs.core.CheckstyleBuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.m2e.core.maven2Builder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&lt;/buildSpec>&#xA;&#x9;&lt;natures>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.m2e.core.maven2Nature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.jdt.core.javanature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>net.sf.eclipsecs.core.CheckstyleNature&lt;/nature>&#xA;&#x9;&lt;/natures>&#xA;&lt;/projectDescription>"
           targetURL="file:/${git.2plan.clone.location/.project}"
           encoding="UTF-8">
         <description>Create the .project file for the kernel</description>
@@ -644,6 +644,81 @@
           <operand
               xsi:type="predicates:NamePredicate"
               pattern="eFapsApp-2Plan"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-Accounting"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-Archives"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-Assets"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-BPM"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-Commons"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-Console"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-Contacts"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-Costumers"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-Data"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-Fabrication"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-HumanResource"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-ImportExport"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-Issues"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-JMS"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-Locations"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-Logback"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-Mail"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-Payroll"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-POS"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-Products"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-Projects"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-Sales"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-Test"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsApp-TimeReport"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="eFapsLocalisation-Ubicaciones"/>
         </predicate>
       </workingSet>
       <description>The dynamic working sets for ${scope.project.label}</description>
