@@ -89,7 +89,9 @@
       <requirement
           name="org.eclipse.wst.web_ui.feature.feature.group"/>
       <requirement
-            name="net.sf.eclipsecs.feature.group"/>
+          name="net.sf.eclipsecs.feature.group"/>
+      <requirement
+          name="net.sf.jautodoc.feature.feature.group"/>
       <repository
           url="http://efaps-eclipse-site.efaps.org"/>
       <repository
@@ -105,8 +107,9 @@
       <repository
           url="http://download.eclipse.org/webtools/repository/luna"/>
       <repository
-          url="http://eclipse-cs.sf.net/"/>
-
+          url="http://eclipse-cs.sourceforge.net/update/"/>
+      <repository
+          url="http://jautodoc.sourceforge.net/update/"/>
       <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
     </setupTask>
     <setupTask
@@ -334,8 +337,8 @@
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.sales.clone"
-          remoteURI="eFaps/eFapsApp-Sales"
+          id="git.2plan.clone"
+          remoteURI="eFaps/eFapsApp-2Plan"
           pushURI="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
@@ -345,19 +348,19 @@
           </detail>
           <detail
               key="label">
-            <value>eFapsApp-Sales repository</value>
+            <value>eFapsApp-Archives repository</value>
           </detail>
           <detail
               key="target">
             <value>remoteURI</value>
           </detail>
         </annotation>
-        <description>eFapsApp-Sales Repository</description>
+        <description>eFapsApp-2Plan Repository</description>
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.commons.clone"
-          remoteURI="eFaps/eFapsApp-Commons"
+          id="git.accounting.clone"
+          remoteURI="eFaps/eFapsApp-Accounting"
           pushURI="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
@@ -367,14 +370,14 @@
           </detail>
           <detail
               key="label">
-            <value>eFapsApp-Commons repository</value>
+            <value>eFapsApp-Accounting repository</value>
           </detail>
           <detail
               key="target">
             <value>remoteURI</value>
           </detail>
         </annotation>
-        <description>eFapsApp-Commons Repository</description>
+        <description>eFapsApp-Accounting Repository</description>
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
@@ -400,8 +403,8 @@
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.accounting.clone"
-          remoteURI="eFaps/eFapsApp-Accounting"
+          id="git.assets.clone"
+          remoteURI="eFaps/eFapsApp-Assets"
           pushURI="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
@@ -411,14 +414,102 @@
           </detail>
           <detail
               key="label">
-            <value>eFapsApp-Accounting repository</value>
+            <value>eFapsApp-Archives repository</value>
           </detail>
           <detail
               key="target">
             <value>remoteURI</value>
           </detail>
         </annotation>
-        <description>eFapsApp-Accounting Repository</description>
+        <description>eFapsApp-Assets Repository</description>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.bpm.clone"
+          remoteURI="eFaps/eFapsApp-BPM"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>github.remoteURIs</value>
+          </detail>
+          <detail
+              key="label">
+            <value>eFapsApp-BPM repository</value>
+          </detail>
+          <detail
+              key="target">
+            <value>remoteURI</value>
+          </detail>
+        </annotation>
+        <description>eFapsApp-BPM Repository</description>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.commons.clone"
+          remoteURI="eFaps/eFapsApp-Commons"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>github.remoteURIs</value>
+          </detail>
+          <detail
+              key="label">
+            <value>eFapsApp-Commons repository</value>
+          </detail>
+          <detail
+              key="target">
+            <value>remoteURI</value>
+          </detail>
+        </annotation>
+        <description>eFapsApp-Commons Repository</description>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.console.clone"
+          remoteURI="eFaps/eFapsApp-Console"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>github.remoteURIs</value>
+          </detail>
+          <detail
+              key="label">
+            <value>eFapsApp-Console repository</value>
+          </detail>
+          <detail
+              key="target">
+            <value>remoteURI</value>
+          </detail>
+        </annotation>
+        <description>eFapsApp-Coonsole Repository</description>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.sales.clone"
+          remoteURI="eFaps/eFapsApp-Sales"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>github.remoteURIs</value>
+          </detail>
+          <detail
+              key="label">
+            <value>eFapsApp-Sales repository</value>
+          </detail>
+          <detail
+              key="target">
+            <value>remoteURI</value>
+          </detail>
+        </annotation>
+        <description>eFapsApp-Sales Repository</description>
       </setupTask>
       <setupTask
           xsi:type="setup:ResourceCreationTask"
@@ -531,7 +622,7 @@
     <setupTask
         xsi:type="setup:CompoundTask"
         name="Task List">
-         <setupTask
+      <setupTask
           xsi:type="setup:VariableTask"
           name="github.user.id"
           defaultValue=""/>
@@ -545,7 +636,7 @@
             summary="eFapsApp-Commons">
           <attribute
               key="state"
-              value="open::"  />
+              value="open::"/>
         </query>
       </setupTask>
     </setupTask>
