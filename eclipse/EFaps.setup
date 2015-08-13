@@ -573,7 +573,7 @@
       <sourceLocator
           rootFolder="${git.2plan.clone.location}">
         <projectFactory
-            xsi:type="resources:EclipseProjectFactory"/>
+            xsi:type="resources:MavenProjectFactory"/>
       </sourceLocator>
     </setupTask>
     <setupTask
