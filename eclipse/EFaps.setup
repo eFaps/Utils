@@ -577,27 +577,37 @@
       </sourceLocator>
     </setupTask>
     <setupTask
-        xsi:type="maven:MavenImportTask">
-      <sourceLocator
-          rootFolder="${git.kernel.clone.location}">
-        <projectFactory
-            xsi:type="resources:MavenProjectFactory"/>
-      </sourceLocator>
-      <sourceLocator
-          rootFolder="${git.api.clone.location}">
-        <projectFactory
-            xsi:type="resources:MavenProjectFactory"/>
-      </sourceLocator>
-      <sourceLocator
-          rootFolder="${git.cli.clone.location}">
-        <projectFactory
-            xsi:type="resources:MavenProjectFactory"/>
-      </sourceLocator>
-      <sourceLocator
-          rootFolder="${git.2plan.clone.location}">
-        <projectFactory
-            xsi:type="resources:MavenProjectFactory"/>
-      </sourceLocator>
+        xsi:type="setup:CompoundTask"
+        name="Maven Imports">
+      <setupTask
+          xsi:type="maven:MavenImportTask"
+          projectNameTemplate="">
+        <sourceLocator
+            rootFolder="${git.kernel.clone.location}">
+          <projectFactory
+              xsi:type="resources:MavenProjectFactory"/>
+        </sourceLocator>
+        <sourceLocator
+            rootFolder="${git.api.clone.location}">
+          <projectFactory
+              xsi:type="resources:MavenProjectFactory"/>
+        </sourceLocator>
+        <sourceLocator
+            rootFolder="${git.cli.clone.location}">
+          <projectFactory
+              xsi:type="resources:MavenProjectFactory"/>
+        </sourceLocator>
+      </setupTask>
+      <setupTask
+          xsi:type="maven:MavenImportTask"
+          projectNameTemplate="eFapsApp-2Plan">
+        <sourceLocator
+            rootFolder="${git.2plan.clone.location}">
+          <annotation/>
+          <projectFactory
+              xsi:type="resources:MavenProjectFactory"/>
+        </sourceLocator>
+      </setupTask>
     </setupTask>
     <setupTask
         xsi:type="setup.workingsets:WorkingSetTask">
