@@ -789,8 +789,11 @@
         name="Task List">
       <setupTask
           xsi:type="setup:VariableTask"
+          id="github.user.id"
           name="github.user.id"
-          defaultValue=""/>
+          value=""
+          defaultValue=""
+          label="Github Issues User id"/>
       <setupTask
           xsi:type="mylyn:MylynQueriesTask"
           connectorKind="github"
