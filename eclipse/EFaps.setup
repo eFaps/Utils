@@ -337,7 +337,7 @@
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.2plan.clone"
+          id="git.twoplan.clone"
           remoteURI="eFaps/eFapsApp-2Plan"
           pushURI="">
         <annotation
