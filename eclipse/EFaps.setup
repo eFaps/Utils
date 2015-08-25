@@ -414,7 +414,7 @@
           </detail>
           <detail
               key="label">
-            <value>eFapsApp-Archives repository</value>
+            <value>eFapsApp-Assets repository</value>
           </detail>
           <detail
               key="target">
@@ -552,49 +552,6 @@
         <description>Create the .project file for the kernel</description>
       </setupTask>
       <description>eFaps Git Repositories</description>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="Maven Imports">
-      <setupTask
-          xsi:type="maven:MavenImportTask"
-          id=""
-          projectNameTemplate="eFaps-API">
-        <sourceLocator
-            rootFolder="${git.api.clone.location}">
-          <projectFactory
-              xsi:type="resources:MavenProjectFactory"/>
-        </sourceLocator>
-      </setupTask>
-      <setupTask
-          xsi:type="maven:MavenImportTask"
-          projectNameTemplate="eFaps-Kernel">
-        <sourceLocator
-            rootFolder="${git.kernel.clone.location}">
-          <projectFactory
-              xsi:type="resources:MavenProjectFactory"/>
-        </sourceLocator>
-      </setupTask>
-      <setupTask
-          xsi:type="maven:MavenImportTask"
-          projectNameTemplate="eFaps-CLI">
-        <sourceLocator
-            rootFolder="${git.cli.clone.location}">
-          <projectFactory
-              xsi:type="resources:MavenProjectFactory"/>
-        </sourceLocator>
-      </setupTask>
-      <setupTask
-          xsi:type="maven:MavenImportTask"
-          projectNameTemplate="eFapsApp-2Plan">
-        <sourceLocator
-            rootFolder="${git.2plan.clone.location}">
-          <annotation/>
-          <projectFactory
-              xsi:type="resources:MavenProjectFactory"/>
-        </sourceLocator>
-        <description>eFapsApp-2Plan</description>
-      </setupTask>
     </setupTask>
     <setupTask
         xsi:type="projects:ProjectsImportTask">
@@ -833,7 +790,7 @@
               value="open::"/>
         </query>
       </setupTask>
-       <setupTask
+      <setupTask
           xsi:type="mylyn:MylynQueriesTask"
           connectorKind="github"
           repositoryURL="https://github.com/eFaps/eFapsApp-Commons"
@@ -846,7 +803,7 @@
               value="open::"/>
         </query>
       </setupTask>
-        <setupTask
+      <setupTask
           xsi:type="mylyn:MylynQueriesTask"
           connectorKind="github"
           repositoryURL="https://github.com/eFaps/eFaps-Webapp"
@@ -859,7 +816,7 @@
               value="open::"/>
         </query>
       </setupTask>
-        <setupTask
+      <setupTask
           xsi:type="mylyn:MylynQueriesTask"
           connectorKind="github"
           repositoryURL="https://github.com/eFaps/eFaps-Webapp-Install"
@@ -872,7 +829,7 @@
               value="open::"/>
         </query>
       </setupTask>
-        <setupTask
+      <setupTask
           xsi:type="mylyn:MylynQueriesTask"
           connectorKind="github"
           repositoryURL="https://github.com/eFaps/eFapsApp-Sales"
@@ -885,7 +842,7 @@
               value="open::"/>
         </query>
       </setupTask>
-        <setupTask
+      <setupTask
           xsi:type="mylyn:MylynQueriesTask"
           connectorKind="github"
           repositoryURL="https://github.com/eFaps/eFapsApp-Payroll"
@@ -898,7 +855,7 @@
               value="open::"/>
         </query>
       </setupTask>
-        <setupTask
+      <setupTask
           xsi:type="mylyn:MylynQueriesTask"
           connectorKind="github"
           repositoryURL="https://github.com/eFaps/eFapsApp-HumanResource"
@@ -911,7 +868,7 @@
               value="open::"/>
         </query>
       </setupTask>
-        <setupTask
+      <setupTask
           xsi:type="mylyn:MylynQueriesTask"
           connectorKind="github"
           repositoryURL="https://github.com/eFaps/eFapsApp-Accounting"
@@ -924,7 +881,7 @@
               value="open::"/>
         </query>
       </setupTask>
-        <setupTask
+      <setupTask
           xsi:type="mylyn:MylynQueriesTask"
           connectorKind="github"
           repositoryURL="https://github.com/eFaps/eFapsApp-TimeReport"
@@ -937,7 +894,7 @@
               value="open::"/>
         </query>
       </setupTask>
-        <setupTask
+      <setupTask
           xsi:type="mylyn:MylynQueriesTask"
           connectorKind="github"
           repositoryURL="https://github.com/eFaps/eFapsApp-Fabrication"
@@ -950,7 +907,7 @@
               value="open::"/>
         </query>
       </setupTask>
-        <setupTask
+      <setupTask
           xsi:type="mylyn:MylynQueriesTask"
           connectorKind="github"
           repositoryURL="https://github.com/eFaps/eFaps-API"
@@ -963,7 +920,7 @@
               value="open::"/>
         </query>
       </setupTask>
-       <setupTask
+      <setupTask
           xsi:type="mylyn:MylynQueriesTask"
           connectorKind="github"
           repositoryURL="https://github.com/eFaps/eFaps-EQL"
