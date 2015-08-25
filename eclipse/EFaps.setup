@@ -92,6 +92,8 @@
           name="net.sf.eclipsecs.feature.group"/>
       <requirement
           name="net.sf.jautodoc.feature.feature.group"/>
+      <requirement
+          name="org.eclipse.mylyn.github.feature.feature.group"/>
       <repository
           url="http://efaps-eclipse-site.efaps.org"/>
       <repository
