@@ -935,6 +935,21 @@
               value="open::"/>
         </query>
       </setupTask>
+      <setupTask
+          xsi:type="mylyn:MylynQueriesTask"
+          id="issues.products"
+          connectorKind="github"
+          repositoryURL="https://github.com/eFaps/eFapsApp-Products"
+          userID="${github.user.id}"
+          password="${github.user.password}">
+        <query
+            summary="eFapsApp-Products">
+          <attribute
+              key="state"
+              value="open::"/>
+        </query>
+        <description>eFapsApp-Products Issues</description>
+      </setupTask>
     </setupTask>
   </stream>
   <logicalProjectContainer
