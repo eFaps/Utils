@@ -115,7 +115,7 @@
       <repository
           url="http://jautodoc.sourceforge.net/update/"/>
       <repository
-          url="https://repository.sonatype.org/content/repositories/forge-sites/m2e-extras/"/>
+          url="http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-buildhelper/0.15.0/N/0.15.0.201207090124/"/>
       <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
     </setupTask>
     <setupTask
