@@ -114,6 +114,8 @@
           url="http://eclipse-cs.sourceforge.net/update/"/>
       <repository
           url="http://jautodoc.sourceforge.net/update/"/>
+      <repository
+          url="https://repository.sonatype.org/content/repositories/forge-sites/m2e-extras/"/>
       <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
     </setupTask>
     <setupTask
