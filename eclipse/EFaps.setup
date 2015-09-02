@@ -756,7 +756,7 @@
       <setupTask
           xsi:type="mylyn:MylynQueriesTask"
           connectorKind="github"
-          repositoryURL="https://github.com/eFaps/eFaps-Utils"
+          repositoryURL="https://github.com/eFaps/Utils"
           userID="${github.user.id}"
           password="${github.user.password}">
         <query
