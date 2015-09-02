@@ -94,6 +94,8 @@
           name="net.sf.jautodoc.feature.feature.group"/>
       <requirement
           name="org.eclipse.mylyn.github.feature.feature.group"/>
+      <requirement
+          name="org.sonatype.m2e.buildhelper.feature.feature.group"/>
       <repository
           url="http://efaps-eclipse-site.efaps.org"/>
       <repository
@@ -112,448 +114,9 @@
           url="http://eclipse-cs.sourceforge.net/update/"/>
       <repository
           url="http://jautodoc.sourceforge.net/update/"/>
+      <repository
+          url="http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-buildhelper/0.15.0/N/0.15.0.201207090124/"/>
       <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="Gits">
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.api.clone"
-          remoteURI="eFaps/eFaps-API"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>github.remoteURIs</value>
-          </detail>
-          <detail
-              key="label">
-            <value>eFaps-API repository</value>
-          </detail>
-          <detail
-              key="target">
-            <value>remoteURI</value>
-          </detail>
-        </annotation>
-        <description>eFaps-API Repository</description>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.cli.clone"
-          remoteURI="eFaps/eFaps-CLI"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>github.remoteURIs</value>
-          </detail>
-          <detail
-              key="label">
-            <value>eFaps-CLI repository</value>
-          </detail>
-          <detail
-              key="target">
-            <value>remoteURI</value>
-          </detail>
-        </annotation>
-        <description>eFaps-CLI Repository</description>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.eql.clone"
-          remoteURI="eFaps/eFaps-EQL"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>github.remoteURIs</value>
-          </detail>
-          <detail
-              key="label">
-            <value>eFaps-EQL repository</value>
-          </detail>
-          <detail
-              key="target">
-            <value>remoteURI</value>
-          </detail>
-        </annotation>
-        <description>eFaps-EQL Repository</description>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.json.clone"
-          remoteURI="eFaps/eFaps-JSON"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>github.remoteURIs</value>
-          </detail>
-          <detail
-              key="label">
-            <value>eFaps-JSON repository</value>
-          </detail>
-          <detail
-              key="target">
-            <value>remoteURI</value>
-          </detail>
-        </annotation>
-        <description>eFaps-JSON Repository</description>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.kernel-install.clone"
-          remoteURI="eFaps/eFaps-Kernel-Install"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>github.remoteURIs</value>
-          </detail>
-          <detail
-              key="label">
-            <value>eFaps-Kernel-Install repository</value>
-          </detail>
-          <detail
-              key="target">
-            <value>remoteURI</value>
-          </detail>
-        </annotation>
-        <description>eFaps-Kernel-Install Repository</description>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.kernel.clone"
-          remoteURI="eFaps/eFaps-Kernel"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>github.remoteURIs</value>
-          </detail>
-          <detail
-              key="label">
-            <value>eFaps-Kernel repository</value>
-          </detail>
-          <detail
-              key="target">
-            <value>remoteURI</value>
-          </detail>
-        </annotation>
-        <description>eFaps-Kernel Repository</description>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.parent.clone"
-          remoteURI="eFaps/eFaps-Parent"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>github.remoteURIs</value>
-          </detail>
-          <detail
-              key="label">
-            <value>eFaps-Parent repository</value>
-          </detail>
-          <detail
-              key="target">
-            <value>remoteURI</value>
-          </detail>
-        </annotation>
-        <description>eFaps-Parent Repository</description>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.tests.clone"
-          remoteURI="eFaps/eFaps-Tests"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>github.remoteURIs</value>
-          </detail>
-          <detail
-              key="label">
-            <value>eFaps-Tests repository</value>
-          </detail>
-          <detail
-              key="target">
-            <value>remoteURI</value>
-          </detail>
-        </annotation>
-        <description>eFaps-Tests Repository</description>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.webapp.clone"
-          remoteURI="eFaps/eFaps-WebApp"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>github.remoteURIs</value>
-          </detail>
-          <detail
-              key="label">
-            <value>eFaps-WebApp repository</value>
-          </detail>
-          <detail
-              key="target">
-            <value>remoteURI</value>
-          </detail>
-        </annotation>
-        <description>eFaps-WebApp Repository</description>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.webapp-install.clone"
-          remoteURI="eFaps/eFaps-WebApp-Install"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>github.remoteURIs</value>
-          </detail>
-          <detail
-              key="label">
-            <value>eFaps-WebApp-Install repository</value>
-          </detail>
-          <detail
-              key="target">
-            <value>remoteURI</value>
-          </detail>
-        </annotation>
-        <description>eFaps-WebApp-Install Repository</description>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.2plan.clone"
-          remoteURI="eFaps/eFapsApp-2Plan"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>github.remoteURIs</value>
-          </detail>
-          <detail
-              key="label">
-            <value>eFapsApp-2Plan repository</value>
-          </detail>
-          <detail
-              key="target">
-            <value>remoteURI</value>
-          </detail>
-        </annotation>
-        <description>eFapsApp-2Plan Repository</description>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.accounting.clone"
-          remoteURI="eFaps/eFapsApp-Accounting"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>github.remoteURIs</value>
-          </detail>
-          <detail
-              key="label">
-            <value>eFapsApp-Accounting repository</value>
-          </detail>
-          <detail
-              key="target">
-            <value>remoteURI</value>
-          </detail>
-        </annotation>
-        <description>eFapsApp-Accounting Repository</description>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.archives.clone"
-          remoteURI="eFaps/eFapsApp-Archives"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>github.remoteURIs</value>
-          </detail>
-          <detail
-              key="label">
-            <value>eFapsApp-Archives repository</value>
-          </detail>
-          <detail
-              key="target">
-            <value>remoteURI</value>
-          </detail>
-        </annotation>
-        <description>eFapsApp-Archives Repository</description>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.assets.clone"
-          remoteURI="eFaps/eFapsApp-Assets"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>github.remoteURIs</value>
-          </detail>
-          <detail
-              key="label">
-            <value>eFapsApp-Assets repository</value>
-          </detail>
-          <detail
-              key="target">
-            <value>remoteURI</value>
-          </detail>
-        </annotation>
-        <description>eFapsApp-Assets Repository</description>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.bpm.clone"
-          remoteURI="eFaps/eFapsApp-BPM"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>github.remoteURIs</value>
-          </detail>
-          <detail
-              key="label">
-            <value>eFapsApp-BPM repository</value>
-          </detail>
-          <detail
-              key="target">
-            <value>remoteURI</value>
-          </detail>
-        </annotation>
-        <description>eFapsApp-BPM Repository</description>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.commons.clone"
-          remoteURI="eFaps/eFapsApp-Commons"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>github.remoteURIs</value>
-          </detail>
-          <detail
-              key="label">
-            <value>eFapsApp-Commons repository</value>
-          </detail>
-          <detail
-              key="target">
-            <value>remoteURI</value>
-          </detail>
-        </annotation>
-        <description>eFapsApp-Commons Repository</description>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.console.clone"
-          remoteURI="eFaps/eFapsApp-Console"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>github.remoteURIs</value>
-          </detail>
-          <detail
-              key="label">
-            <value>eFapsApp-Console repository</value>
-          </detail>
-          <detail
-              key="target">
-            <value>remoteURI</value>
-          </detail>
-        </annotation>
-        <description>eFapsApp-Coonsole Repository</description>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.sales.clone"
-          remoteURI="eFaps/eFapsApp-Sales"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>github.remoteURIs</value>
-          </detail>
-          <detail
-              key="label">
-            <value>eFapsApp-Sales repository</value>
-          </detail>
-          <detail
-              key="target">
-            <value>remoteURI</value>
-          </detail>
-        </annotation>
-        <description>eFapsApp-Sales Repository</description>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:ResourceCreationTask"
-          id="api.projectfile"
-          excludedTriggers="BOOTSTRAP"
-          predecessor="git.api.clone"
-          content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;projectDescription>&#xA;&#x9;&lt;name>eFaps-API&lt;/name>&#xA;&#x9;&lt;comment>&lt;/comment>&#xA;&#x9;&lt;projects>&#xA;&#x9;&lt;/projects>&#xA;&#x9;&lt;buildSpec>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.jdt.core.javabuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>net.sf.eclipsecs.core.CheckstyleBuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.m2e.core.maven2Builder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&lt;/buildSpec>&#xA;&#x9;&lt;natures>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.m2e.core.maven2Nature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.jdt.core.javanature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>net.sf.eclipsecs.core.CheckstyleNature&lt;/nature>&#xA;&#x9;&lt;/natures>&#xA;&lt;/projectDescription>"
-          targetURL="file:/${git.api.clone.location/.project}"
-          encoding="UTF-8">
-        <description>Create the .project file for efaps-API</description>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:ResourceCreationTask"
-          id="cli.projectfile"
-          excludedTriggers="BOOTSTRAP"
-          predecessor="git.cli.clone"
-          content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;projectDescription>&#xA;&#x9;&lt;name>eFaps-CLI&lt;/name>&#xA;&#x9;&lt;comment>&lt;/comment>&#xA;&#x9;&lt;projects>&#xA;&#x9;&lt;/projects>&#xA;&#x9;&lt;buildSpec>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.jdt.core.javabuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>net.sf.eclipsecs.core.CheckstyleBuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.m2e.core.maven2Builder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&lt;/buildSpec>&#xA;&#x9;&lt;natures>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.m2e.core.maven2Nature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.jdt.core.javanature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>net.sf.eclipsecs.core.CheckstyleNature&lt;/nature>&#xA;&#x9;&lt;/natures>&#xA;&lt;/projectDescription>"
-          targetURL="file:/${git.cli.clone.location/.project}"
-          encoding="UTF-8">
-        <description>Create the .project file for efaps-API</description>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:ResourceCreationTask"
-          id="kernel.projectfile"
-          excludedTriggers="BOOTSTRAP"
-          predecessor="git.kernel.clone"
-          content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;projectDescription>&#xA;&#x9;&lt;name>eFaps-Kernel&lt;/name>&#xA;&#x9;&lt;comment>&lt;/comment>&#xA;&#x9;&lt;projects>&#xA;&#x9;&lt;/projects>&#xA;&#x9;&lt;buildSpec>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.jdt.core.javabuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>net.sf.eclipsecs.core.CheckstyleBuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.m2e.core.maven2Builder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&lt;/buildSpec>&#xA;&#x9;&lt;natures>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.m2e.core.maven2Nature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.jdt.core.javanature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>net.sf.eclipsecs.core.CheckstyleNature&lt;/nature>&#xA;&#x9;&lt;/natures>&#xA;&lt;/projectDescription>"
-          targetURL="file:/${git.kernel.clone.location/.project}"
-          encoding="UTF-8">
-        <description>Create the .project file for the kernel</description>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:ResourceCreationTask"
-          id="2plan.projectfile"
-          excludedTriggers="BOOTSTRAP"
-          predecessor="git.kernel.clone"
-          content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;projectDescription>&#xA;&#x9;&lt;name>eFapsApp-2Plan&lt;/name>&#xA;&#x9;&lt;comment>&lt;/comment>&#xA;&#x9;&lt;projects>&#xA;&#x9;&lt;/projects>&#xA;&#x9;&lt;buildSpec>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.jdt.core.javabuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>net.sf.eclipsecs.core.CheckstyleBuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.m2e.core.maven2Builder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&lt;/buildSpec>&#xA;&#x9;&lt;natures>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.m2e.core.maven2Nature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.jdt.core.javanature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>net.sf.eclipsecs.core.CheckstyleNature&lt;/nature>&#xA;&#x9;&lt;/natures>&#xA;&lt;/projectDescription>"
-          targetURL="file:/${git.2plan.clone.location/.project}"
-          encoding="UTF-8">
-        <description>Create the .project file for the kernel</description>
-      </setupTask>
-      <description>eFaps Git Repositories</description>
     </setupTask>
     <setupTask
         xsi:type="projects:ProjectsImportTask">
@@ -617,6 +180,447 @@
           <projectFactory
               xsi:type="resources:MavenProjectFactory"/>
         </sourceLocator>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="Gits">
+        <setupTask
+            xsi:type="git:GitCloneTask"
+            id="git.api.clone"
+            remoteURI="eFaps/eFaps-API"
+            pushURI="">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/InducedChoices">
+            <detail
+                key="inherit">
+              <value>github.remoteURIs</value>
+            </detail>
+            <detail
+                key="label">
+              <value>eFaps-API repository</value>
+            </detail>
+            <detail
+                key="target">
+              <value>remoteURI</value>
+            </detail>
+          </annotation>
+          <description>eFaps-API Repository</description>
+        </setupTask>
+        <setupTask
+            xsi:type="git:GitCloneTask"
+            id="git.cli.clone"
+            remoteURI="eFaps/eFaps-CLI"
+            pushURI="">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/InducedChoices">
+            <detail
+                key="inherit">
+              <value>github.remoteURIs</value>
+            </detail>
+            <detail
+                key="label">
+              <value>eFaps-CLI repository</value>
+            </detail>
+            <detail
+                key="target">
+              <value>remoteURI</value>
+            </detail>
+          </annotation>
+          <description>eFaps-CLI Repository</description>
+        </setupTask>
+        <setupTask
+            xsi:type="git:GitCloneTask"
+            id="git.eql.clone"
+            remoteURI="eFaps/eFaps-EQL"
+            pushURI="">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/InducedChoices">
+            <detail
+                key="inherit">
+              <value>github.remoteURIs</value>
+            </detail>
+            <detail
+                key="label">
+              <value>eFaps-EQL repository</value>
+            </detail>
+            <detail
+                key="target">
+              <value>remoteURI</value>
+            </detail>
+          </annotation>
+          <description>eFaps-EQL Repository</description>
+        </setupTask>
+        <setupTask
+            xsi:type="git:GitCloneTask"
+            id="git.json.clone"
+            remoteURI="eFaps/eFaps-JSON"
+            pushURI="">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/InducedChoices">
+            <detail
+                key="inherit">
+              <value>github.remoteURIs</value>
+            </detail>
+            <detail
+                key="label">
+              <value>eFaps-JSON repository</value>
+            </detail>
+            <detail
+                key="target">
+              <value>remoteURI</value>
+            </detail>
+          </annotation>
+          <description>eFaps-JSON Repository</description>
+        </setupTask>
+        <setupTask
+            xsi:type="git:GitCloneTask"
+            id="git.kernel-install.clone"
+            remoteURI="eFaps/eFaps-Kernel-Install"
+            pushURI="">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/InducedChoices">
+            <detail
+                key="inherit">
+              <value>github.remoteURIs</value>
+            </detail>
+            <detail
+                key="label">
+              <value>eFaps-Kernel-Install repository</value>
+            </detail>
+            <detail
+                key="target">
+              <value>remoteURI</value>
+            </detail>
+          </annotation>
+          <description>eFaps-Kernel-Install Repository</description>
+        </setupTask>
+        <setupTask
+            xsi:type="git:GitCloneTask"
+            id="git.kernel.clone"
+            remoteURI="eFaps/eFaps-Kernel"
+            pushURI="">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/InducedChoices">
+            <detail
+                key="inherit">
+              <value>github.remoteURIs</value>
+            </detail>
+            <detail
+                key="label">
+              <value>eFaps-Kernel repository</value>
+            </detail>
+            <detail
+                key="target">
+              <value>remoteURI</value>
+            </detail>
+          </annotation>
+          <description>eFaps-Kernel Repository</description>
+        </setupTask>
+        <setupTask
+            xsi:type="git:GitCloneTask"
+            id="git.parent.clone"
+            remoteURI="eFaps/eFaps-Parent"
+            pushURI="">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/InducedChoices">
+            <detail
+                key="inherit">
+              <value>github.remoteURIs</value>
+            </detail>
+            <detail
+                key="label">
+              <value>eFaps-Parent repository</value>
+            </detail>
+            <detail
+                key="target">
+              <value>remoteURI</value>
+            </detail>
+          </annotation>
+          <description>eFaps-Parent Repository</description>
+        </setupTask>
+        <setupTask
+            xsi:type="git:GitCloneTask"
+            id="git.tests.clone"
+            remoteURI="eFaps/eFaps-Tests"
+            pushURI="">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/InducedChoices">
+            <detail
+                key="inherit">
+              <value>github.remoteURIs</value>
+            </detail>
+            <detail
+                key="label">
+              <value>eFaps-Tests repository</value>
+            </detail>
+            <detail
+                key="target">
+              <value>remoteURI</value>
+            </detail>
+          </annotation>
+          <description>eFaps-Tests Repository</description>
+        </setupTask>
+        <setupTask
+            xsi:type="git:GitCloneTask"
+            id="git.webapp.clone"
+            remoteURI="eFaps/eFaps-WebApp"
+            pushURI="">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/InducedChoices">
+            <detail
+                key="inherit">
+              <value>github.remoteURIs</value>
+            </detail>
+            <detail
+                key="label">
+              <value>eFaps-WebApp repository</value>
+            </detail>
+            <detail
+                key="target">
+              <value>remoteURI</value>
+            </detail>
+          </annotation>
+          <description>eFaps-WebApp Repository</description>
+        </setupTask>
+        <setupTask
+            xsi:type="git:GitCloneTask"
+            id="git.webapp-install.clone"
+            remoteURI="eFaps/eFaps-WebApp-Install"
+            pushURI="">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/InducedChoices">
+            <detail
+                key="inherit">
+              <value>github.remoteURIs</value>
+            </detail>
+            <detail
+                key="label">
+              <value>eFaps-WebApp-Install repository</value>
+            </detail>
+            <detail
+                key="target">
+              <value>remoteURI</value>
+            </detail>
+          </annotation>
+          <description>eFaps-WebApp-Install Repository</description>
+        </setupTask>
+        <setupTask
+            xsi:type="git:GitCloneTask"
+            id="git.2plan.clone"
+            remoteURI="eFaps/eFapsApp-2Plan"
+            pushURI="">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/InducedChoices">
+            <detail
+                key="inherit">
+              <value>github.remoteURIs</value>
+            </detail>
+            <detail
+                key="label">
+              <value>eFapsApp-2Plan repository</value>
+            </detail>
+            <detail
+                key="target">
+              <value>remoteURI</value>
+            </detail>
+          </annotation>
+          <description>eFapsApp-2Plan Repository</description>
+        </setupTask>
+        <setupTask
+            xsi:type="git:GitCloneTask"
+            id="git.accounting.clone"
+            remoteURI="eFaps/eFapsApp-Accounting"
+            pushURI="">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/InducedChoices">
+            <detail
+                key="inherit">
+              <value>github.remoteURIs</value>
+            </detail>
+            <detail
+                key="label">
+              <value>eFapsApp-Accounting repository</value>
+            </detail>
+            <detail
+                key="target">
+              <value>remoteURI</value>
+            </detail>
+          </annotation>
+          <description>eFapsApp-Accounting Repository</description>
+        </setupTask>
+        <setupTask
+            xsi:type="git:GitCloneTask"
+            id="git.archives.clone"
+            remoteURI="eFaps/eFapsApp-Archives"
+            pushURI="">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/InducedChoices">
+            <detail
+                key="inherit">
+              <value>github.remoteURIs</value>
+            </detail>
+            <detail
+                key="label">
+              <value>eFapsApp-Archives repository</value>
+            </detail>
+            <detail
+                key="target">
+              <value>remoteURI</value>
+            </detail>
+          </annotation>
+          <description>eFapsApp-Archives Repository</description>
+        </setupTask>
+        <setupTask
+            xsi:type="git:GitCloneTask"
+            id="git.assets.clone"
+            remoteURI="eFaps/eFapsApp-Assets"
+            pushURI="">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/InducedChoices">
+            <detail
+                key="inherit">
+              <value>github.remoteURIs</value>
+            </detail>
+            <detail
+                key="label">
+              <value>eFapsApp-Assets repository</value>
+            </detail>
+            <detail
+                key="target">
+              <value>remoteURI</value>
+            </detail>
+          </annotation>
+          <description>eFapsApp-Assets Repository</description>
+        </setupTask>
+        <setupTask
+            xsi:type="git:GitCloneTask"
+            id="git.bpm.clone"
+            remoteURI="eFaps/eFapsApp-BPM"
+            pushURI="">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/InducedChoices">
+            <detail
+                key="inherit">
+              <value>github.remoteURIs</value>
+            </detail>
+            <detail
+                key="label">
+              <value>eFapsApp-BPM repository</value>
+            </detail>
+            <detail
+                key="target">
+              <value>remoteURI</value>
+            </detail>
+          </annotation>
+          <description>eFapsApp-BPM Repository</description>
+        </setupTask>
+        <setupTask
+            xsi:type="git:GitCloneTask"
+            id="git.commons.clone"
+            remoteURI="eFaps/eFapsApp-Commons"
+            pushURI="">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/InducedChoices">
+            <detail
+                key="inherit">
+              <value>github.remoteURIs</value>
+            </detail>
+            <detail
+                key="label">
+              <value>eFapsApp-Commons repository</value>
+            </detail>
+            <detail
+                key="target">
+              <value>remoteURI</value>
+            </detail>
+          </annotation>
+          <description>eFapsApp-Commons Repository</description>
+        </setupTask>
+        <setupTask
+            xsi:type="git:GitCloneTask"
+            id="git.console.clone"
+            remoteURI="eFaps/eFapsApp-Console"
+            pushURI="">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/InducedChoices">
+            <detail
+                key="inherit">
+              <value>github.remoteURIs</value>
+            </detail>
+            <detail
+                key="label">
+              <value>eFapsApp-Console repository</value>
+            </detail>
+            <detail
+                key="target">
+              <value>remoteURI</value>
+            </detail>
+          </annotation>
+          <description>eFapsApp-Coonsole Repository</description>
+        </setupTask>
+        <setupTask
+            xsi:type="git:GitCloneTask"
+            id="git.sales.clone"
+            remoteURI="eFaps/eFapsApp-Sales"
+            pushURI="">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/InducedChoices">
+            <detail
+                key="inherit">
+              <value>github.remoteURIs</value>
+            </detail>
+            <detail
+                key="label">
+              <value>eFapsApp-Sales repository</value>
+            </detail>
+            <detail
+                key="target">
+              <value>remoteURI</value>
+            </detail>
+          </annotation>
+          <description>eFapsApp-Sales Repository</description>
+        </setupTask>
+        <setupTask
+            xsi:type="setup:ResourceCreationTask"
+            id="api.projectfile"
+            excludedTriggers="BOOTSTRAP"
+            predecessor="git.api.clone"
+            content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;projectDescription>&#xA;&#x9;&lt;name>eFaps-API&lt;/name>&#xA;&#x9;&lt;comment>&lt;/comment>&#xA;&#x9;&lt;projects>&#xA;&#x9;&lt;/projects>&#xA;&#x9;&lt;buildSpec>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.jdt.core.javabuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>net.sf.eclipsecs.core.CheckstyleBuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.m2e.core.maven2Builder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&lt;/buildSpec>&#xA;&#x9;&lt;natures>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.m2e.core.maven2Nature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.jdt.core.javanature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>net.sf.eclipsecs.core.CheckstyleNature&lt;/nature>&#xA;&#x9;&lt;/natures>&#xA;&lt;/projectDescription>"
+            targetURL="file:/${git.api.clone.location/.project}"
+            encoding="UTF-8">
+          <description>Create the .project file for efaps-API</description>
+        </setupTask>
+        <setupTask
+            xsi:type="setup:ResourceCreationTask"
+            id="cli.projectfile"
+            excludedTriggers="BOOTSTRAP"
+            predecessor="git.cli.clone"
+            content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;projectDescription>&#xA;&#x9;&lt;name>eFaps-CLI&lt;/name>&#xA;&#x9;&lt;comment>&lt;/comment>&#xA;&#x9;&lt;projects>&#xA;&#x9;&lt;/projects>&#xA;&#x9;&lt;buildSpec>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.jdt.core.javabuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>net.sf.eclipsecs.core.CheckstyleBuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.m2e.core.maven2Builder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&lt;/buildSpec>&#xA;&#x9;&lt;natures>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.m2e.core.maven2Nature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.jdt.core.javanature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>net.sf.eclipsecs.core.CheckstyleNature&lt;/nature>&#xA;&#x9;&lt;/natures>&#xA;&lt;/projectDescription>"
+            targetURL="file:/${git.cli.clone.location/.project}"
+            encoding="UTF-8">
+          <description>Create the .project file for efaps-API</description>
+        </setupTask>
+        <setupTask
+            xsi:type="setup:ResourceCreationTask"
+            id="kernel.projectfile"
+            excludedTriggers="BOOTSTRAP"
+            predecessor="git.kernel.clone"
+            content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;projectDescription>&#xA;&#x9;&lt;name>eFaps-Kernel&lt;/name>&#xA;&#x9;&lt;comment>&lt;/comment>&#xA;&#x9;&lt;projects>&#xA;&#x9;&lt;/projects>&#xA;&#x9;&lt;buildSpec>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.jdt.core.javabuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>net.sf.eclipsecs.core.CheckstyleBuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.m2e.core.maven2Builder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&lt;/buildSpec>&#xA;&#x9;&lt;natures>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.m2e.core.maven2Nature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.jdt.core.javanature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>net.sf.eclipsecs.core.CheckstyleNature&lt;/nature>&#xA;&#x9;&lt;/natures>&#xA;&lt;/projectDescription>"
+            targetURL="file:/${git.kernel.clone.location/.project}"
+            encoding="UTF-8">
+          <description>Create the .project file for the kernel</description>
+        </setupTask>
+        <setupTask
+            xsi:type="setup:ResourceCreationTask"
+            id="2plan.projectfile"
+            excludedTriggers="BOOTSTRAP"
+            predecessor="git.kernel.clone"
+            content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;projectDescription>&#xA;&#x9;&lt;name>eFapsApp-2Plan&lt;/name>&#xA;&#x9;&lt;comment>&lt;/comment>&#xA;&#x9;&lt;projects>&#xA;&#x9;&lt;/projects>&#xA;&#x9;&lt;buildSpec>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.jdt.core.javabuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>net.sf.eclipsecs.core.CheckstyleBuilder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&#x9;&lt;buildCommand>&#xA;&#x9;&#x9;&#x9;&lt;name>org.eclipse.m2e.core.maven2Builder&lt;/name>&#xA;&#x9;&#x9;&#x9;&lt;arguments>&#xA;&#x9;&#x9;&#x9;&lt;/arguments>&#xA;&#x9;&#x9;&lt;/buildCommand>&#xA;&#x9;&lt;/buildSpec>&#xA;&#x9;&lt;natures>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.m2e.core.maven2Nature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>org.eclipse.jdt.core.javanature&lt;/nature>&#xA;&#x9;&#x9;&lt;nature>net.sf.eclipsecs.core.CheckstyleNature&lt;/nature>&#xA;&#x9;&lt;/natures>&#xA;&lt;/projectDescription>"
+            targetURL="file:/${git.2plan.clone.location/.project}"
+            encoding="UTF-8">
+          <description>Create the .project file for the kernel</description>
+        </setupTask>
+        <description>eFaps Git Repositories</description>
       </setupTask>
     </setupTask>
     <setupTask
