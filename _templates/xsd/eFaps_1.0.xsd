@@ -566,6 +566,12 @@
         </xsd:sequence>
     </xsd:complexType>
 
+    <xsd:complexType name="parents">
+        <xsd:sequence>
+            <xsd:element name="parent" type="xsd:string" maxOccurs="unbounded" minOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
     <xsd:complexType name="column">
         <xsd:attribute name="name" type="xsd:string" use="required" />
         <xsd:attribute name="type" use="required">
@@ -770,6 +776,7 @@
                     <xsd:element name="icon" type="xsd:string" maxOccurs="1" minOccurs="0"/>
                     <xsd:element name="access" type="eFaps:access" maxOccurs="1" minOccurs="0"/>
                     <xsd:element name="target" type="eFaps:target" maxOccurs="1" minOccurs="0"/>
+                    <xsd:element name="parents" type="eFaps:parents" maxOccurs="1" minOccurs="0"/>
                     <xsd:element name="trigger" type="eFaps:trigger4UI" maxOccurs="unbounded" minOccurs="0"/>
                     <xsd:element name="property" type="eFaps:property_ui-command" maxOccurs="unbounded" minOccurs="0"/>
                 </xsd:sequence>
@@ -812,7 +819,6 @@
         </xsd:complexContent>
     </xsd:complexType>
 
-
     <xsd:complexType name="definition_ui-menu">
         <xsd:complexContent>
             <xsd:extension base="eFaps:AbstractDefinition">
@@ -822,6 +828,7 @@
                     <xsd:element name="target" type="eFaps:target" maxOccurs="1" minOccurs="0"/>
                     <xsd:element name="type" type="xsd:string" maxOccurs="1" minOccurs="0"/>
                     <xsd:element name="childs" type="eFaps:childs" maxOccurs="1" minOccurs="0"/>
+                    <xsd:element name="parents" type="eFaps:parents" maxOccurs="1" minOccurs="0"/>
                     <xsd:element name="trigger" type="eFaps:trigger4UI" maxOccurs="unbounded" minOccurs="0"/>
                     <xsd:element name="property" type="eFaps:property_ui-command" maxOccurs="unbounded" minOccurs="0"/>
                 </xsd:sequence>
