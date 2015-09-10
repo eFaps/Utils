@@ -962,11 +962,10 @@
           userID="${github.user.id}"
           password="${github.user.password}">
         <query
-            summary="eFapsApp-Mail">
-
+            summary="eFapsApp-Mail" >
             <attribute
               key="state"
-              value="all::"/>
+              value="open::closed::"/>
         </query>
         <description>eFapsApp-Mail Issues</description>
       </setupTask>
