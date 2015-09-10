@@ -965,7 +965,7 @@
             summary="eFapsApp-Mail" >
             <attribute
               key="state"
-              value="close::"/>
+              value="closed::"/>
         </query>
         <description>eFapsApp-Mail Issues</description>
       </setupTask>
