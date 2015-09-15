@@ -826,8 +826,7 @@
                     <xsd:element name="type" type="xsd:string" maxOccurs="1" minOccurs="0" />
                     <xsd:element name="field" type="eFaps:formfield" maxOccurs="unbounded" minOccurs="0" />
                     <xsd:element name="trigger" type="eFaps:trigger4Form" maxOccurs="unbounded" minOccurs="0" />
-                    <xsd:element name="property" type="eFaps:property_ui-form" maxOccurs="unbounded"
-                        minOccurs="0" />
+                    <xsd:element name="property" type="eFaps:property_ui-form" maxOccurs="unbounded" minOccurs="0" />
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
@@ -995,53 +994,42 @@
         <xsd:attribute name="index" type="xsd:nonNegativeInteger" use="optional" default="0" />
     </xsd:complexType>
 
-    <xsd:complexType name="abstractfield">
+    <xsd:complexType name="formfield">
         <xsd:sequence>
+            <xsd:element name="property" type="eFaps:property_formfield" maxOccurs="unbounded" minOccurs="0" />
             <xsd:element name="icon" type="xsd:string" maxOccurs="1" minOccurs="0" />
             <xsd:element name="picker" type="eFaps:picker" maxOccurs="1" minOccurs="0" />
             <xsd:element name="trigger" type="eFaps:trigger4UI" maxOccurs="unbounded" minOccurs="0" />
+            <xsd:element name="table" type="xsd:string" maxOccurs="1" minOccurs="0" />
+            <xsd:element name="evaluate" type="eFaps:evaluate" maxOccurs="1" minOccurs="0" />
         </xsd:sequence>
         <xsd:attribute name="name" type="xsd:string" use="required" />
-    </xsd:complexType>
-
-
-    <xsd:complexType name="formfield">
-        <xsd:complexContent>
-            <xsd:extension base="eFaps:abstractfield">
-                <xsd:sequence>
-                    <xsd:element name="property" type="eFaps:property_formfield" maxOccurs="unbounded"
-                        minOccurs="0" />
-                    <xsd:element name="table" type="xsd:string" maxOccurs="1" minOccurs="0" />
-                    <xsd:element name="evaluate" type="eFaps:evaluate" maxOccurs="1" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="character" use="optional">
-                    <xsd:simpleType>
-                        <xsd:restriction base="xsd:string">
-                            <xsd:enumeration value="Chart" />
-                            <xsd:enumeration value="Classification" />
-                            <xsd:enumeration value="Command" />
-                            <xsd:enumeration value="Group" />
-                            <xsd:enumeration value="Heading" />
-                            <xsd:enumeration value="Picker" />
-                            <xsd:enumeration value="Set" />
-                            <xsd:enumeration value="Target" />
-                        </xsd:restriction>
-                    </xsd:simpleType>
-                </xsd:attribute>
-            </xsd:extension>
-        </xsd:complexContent>
+        <xsd:attribute name="character" use="optional">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="Chart" />
+                    <xsd:enumeration value="Classification" />
+                    <xsd:enumeration value="Command" />
+                    <xsd:enumeration value="Group" />
+                    <xsd:enumeration value="Heading" />
+                    <xsd:enumeration value="Picker" />
+                    <xsd:enumeration value="Set" />
+                    <xsd:enumeration value="Target" />
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
     </xsd:complexType>
 
     <xsd:complexType name="tablefield">
-        <xsd:complexContent>
-            <xsd:extension base="eFaps:abstractfield">
-                <xsd:sequence>
-                    <xsd:element name="property" type="eFaps:property_tablefield" maxOccurs="unbounded" minOccurs="0" />
-                </xsd:sequence>
-            </xsd:extension>
-        </xsd:complexContent>
+        <xsd:sequence>
+            <xsd:element name="icon" type="xsd:string" maxOccurs="1" minOccurs="0" />
+            <xsd:element name="property" type="eFaps:property_tablefield" maxOccurs="unbounded" minOccurs="0" />
+            <xsd:element name="picker" type="eFaps:picker" maxOccurs="1" minOccurs="0" />
+            <xsd:element name="trigger" type="eFaps:trigger4UI" maxOccurs="unbounded" minOccurs="0" />
+            <xsd:element name="evaluate" type="eFaps:evaluate" maxOccurs="1" minOccurs="0" />
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string" use="required" />
     </xsd:complexType>
-
 
     <xsd:complexType name="foreign">
         <xsd:attribute name="name" type="xsd:string" />
