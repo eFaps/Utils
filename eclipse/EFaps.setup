@@ -984,6 +984,21 @@
         </query>
         <description>eFapsApp-Contacts Issues</description>
       </setupTask>
+       <setupTask
+          xsi:type="mylyn:MylynQueriesTask"
+          id="issues.projects"
+          connectorKind="github"
+          repositoryURL="https://github.com/eFaps/eFapsApp-Projects"
+          userID="${github.user.id}"
+          password="${github.user.password}">
+        <query
+            summary="eFapsApp-Projects">
+          <attribute
+              key="state"
+              value="open::"/>
+        </query>
+        <description>eFapsApp-Projects Issues</description>
+      </setupTask>
     </setupTask>
   </stream>
   <logicalProjectContainer
