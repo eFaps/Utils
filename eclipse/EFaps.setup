@@ -1000,6 +1000,22 @@
         <description>eFapsApp-Projects Issues</description>
       </setupTask>
     </setupTask>
+     <setupTask
+          xsi:type="mylyn:MylynQueriesTask"
+          id="issues.projects"
+          connectorKind="github"
+          repositoryURL="https://github.com/eFaps/eFapsApp-Assets"
+          userID="${github.user.id}"
+          password="${github.user.password}">
+        <query
+            summary="eFapsApp-Assets">
+          <attribute
+              key="state"
+              value="open::"/>
+        </query>
+        <description>eFapsApp-Assets Issues</description>
+      </setupTask>
+    </setupTask>
   </stream>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
