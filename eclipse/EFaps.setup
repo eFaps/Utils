@@ -1002,7 +1002,7 @@
     </setupTask>
      <setupTask
           xsi:type="mylyn:MylynQueriesTask"
-          id="issues.projects"
+          id="issues.assets"
           connectorKind="github"
           repositoryURL="https://github.com/eFaps/eFapsApp-Assets"
           userID="${github.user.id}"
