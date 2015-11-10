@@ -1015,7 +1015,6 @@
         </query>
         <description>eFapsApp-Assets Issues</description>
       </setupTask>
-    </setupTask>
   </stream>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
