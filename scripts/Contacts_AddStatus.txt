@@ -1,0 +1,5 @@
+UPDATE t_cocontact
+   SET status= (SELECT id
+  FROM t_dmstatus
+  where key ='Active'
+  and typeid in (select id from t_cmabstract where uuid = 'cc83c664-d47c-40e5-9668-8f405b5dbc0e'));
