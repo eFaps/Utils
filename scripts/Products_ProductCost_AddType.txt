@@ -1,0 +1,2 @@
+UPDATE t_prodprodcost
+   SET typeid=(select id from t_cmabstract  where uuid = '3d99fa55-571f-4904-8f38-155922e08d1c');
