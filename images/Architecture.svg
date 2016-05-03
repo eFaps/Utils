@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.77324723"
-     inkscape:cx="684.88308"
-     inkscape:cy="461.69769"
+     inkscape:zoom="2.3228083"
+     inkscape:cx="380.10152"
+     inkscape:cy="166.15595"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -815,34 +815,117 @@
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:24.5843029px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="55.829361"
-       y="1035.7153"
+       y="1034.3955"
        id="text3834"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3836"
          x="55.829361"
-         y="1035.7153">Presentation Tier</tspan></text>
+         y="1034.3955">Presentation Tier</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:24.5843029px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="396.03543"
-       y="1035.7153"
+       y="1034.3955"
        id="text3834-3"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3836-4"
          x="396.03543"
-         y="1035.7153">Middle Tier</tspan></text>
+         y="1034.3955">Middle Tier</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:24.5843029px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="880.26489"
-       y="1035.7153"
+       y="1034.3955"
        id="text3834-3-2"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3836-4-5"
          x="880.26489"
-         y="1035.7153">Data Tier</tspan></text>
+         y="1034.3955">Data Tier</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.5843029px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="676.05206"
+       y="1034.3955"
+       id="text3834-3-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3836-4-2"
+         x="676.05206"
+         y="1034.3955">Cache</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:none"
+       d="m 306.07843,716.87442 c 0.11646,-0.10701 0.23542,-0.21389 0.35752,-0.3209 2.32308,-2.03802 5.19892,-3.65655 8.54757,-4.81054 4.10848,-1.41605 8.9504,-2.134 14.39156,-2.134 1.02965,0 2.09133,0.0257 3.17271,0.0771 l 0,-9.68606 c -5.55264,0.0436 -21.12365,1.58674 -26.46936,16.87442 z"
+       id="path3660" />
+    <g
+       id="g3666"
+       transform="matrix(0.25417577,0,0,0.25417577,-334.56076,760.28652)" />
+    <g
+       id="g3668"
+       transform="matrix(0.25417577,0,0,0.25417577,-334.56076,760.28652)" />
+    <g
+       id="g3670"
+       transform="matrix(0.25417577,0,0,0.25417577,-334.56076,760.28652)" />
+    <g
+       id="g3672"
+       transform="matrix(0.25417577,0,0,0.25417577,-334.56076,760.28652)" />
+    <g
+       id="g3674"
+       transform="matrix(0.25417577,0,0,0.25417577,-334.56076,760.28652)" />
+    <g
+       id="g3676"
+       transform="matrix(0.25417577,0,0,0.25417577,-334.56076,760.28652)" />
+    <g
+       id="g3678"
+       transform="matrix(0.25417577,0,0,0.25417577,-334.56076,760.28652)" />
+    <g
+       id="g3680"
+       transform="matrix(0.25417577,0,0,0.25417577,-334.56076,760.28652)" />
+    <g
+       id="g3682"
+       transform="matrix(0.25417577,0,0,0.25417577,-334.56076,760.28652)" />
+    <g
+       id="g3684"
+       transform="matrix(0.25417577,0,0,0.25417577,-334.56076,760.28652)" />
+    <g
+       id="g3686"
+       transform="matrix(0.25417577,0,0,0.25417577,-334.56076,760.28652)" />
+    <g
+       id="g3688"
+       transform="matrix(0.25417577,0,0,0.25417577,-334.56076,760.28652)" />
+    <g
+       id="g3690"
+       transform="matrix(0.25417577,0,0,0.25417577,-334.56076,760.28652)" />
+    <g
+       id="g3692"
+       transform="matrix(0.25417577,0,0,0.25417577,-334.56076,760.28652)" />
+    <g
+       id="g3694"
+       transform="matrix(0.25417577,0,0,0.25417577,-334.56076,760.28652)" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:none"
+       d="m 414.26251,809.22554 c 0.11646,-0.10701 0.23542,-0.21389 0.35752,-0.3209 2.32308,-2.03802 5.19892,-3.65655 8.54757,-4.81054 4.10848,-1.41605 8.9504,-2.134 14.39156,-2.134 1.02965,0 2.09133,0.0257 3.17271,0.0771 l 0,-9.68606 c -5.55264,0.0436 -21.12365,1.58674 -26.46936,16.87442 z"
+       id="path3660-9" />
+    <g
+       id="g3838">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3836"
+         d="m 354.52775,879.18821 51.23109,-22.49432 -27.12235,52.09211 -0.64577,-27.33759 z"
+         style="fill:#ca3535;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:0.99215686" />
+      <g
+         transform="translate(345.92635,851.37505)"
+         id="g3824">
+        <path
+           style="fill:#550000;fill-opacity:1"
+           inkscape:connector-curvature="0"
+           d="M 63.47,2.352 C 62.894,1.729 61.984,1.54 61.206,1.875 L 1.205,27.899 c -0.871,0.377 -1.355,1.311 -1.164,2.24 0.193,0.928 1.01,1.592 1.957,1.594 l 28.068,0.029 0,28.279 c 0,0.918 0.625,1.719 1.516,1.941 0.162,0.039 0.324,0.059 0.484,0.059 0.727,0 1.415,-0.396 1.767,-1.061 L 63.767,4.647 c 0.398,-0.75 0.279,-1.67 -0.297,-2.295 z m -29.403,49.664 0,-22.252 c 0,-1.104 -0.895,-1.998 -1.999,-2 L 11.615,27.743 57.552,7.819 34.067,52.016 Z"
+           id="path3826" />
+      </g>
+    </g>
   </g>
 </svg>
