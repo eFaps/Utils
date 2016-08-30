@@ -1,0 +1,4 @@
+INSERT INTO t_prodstaticstoragepos(
+            typeid, companyid, quantity, productid, uomid,
+            storageid, creator, created, modifier, modified)
+  select (select id from t_cmabstract  where uuid = '241f2d28-3626-4ca7-8c38-18404324080e' ), companyid, quantity, productid, uomid, docid, '1', (SELECT TIMESTAMP 'now'),'1',(SELECT TIMESTAMP 'now')   from t_prodstaticinventorypos
