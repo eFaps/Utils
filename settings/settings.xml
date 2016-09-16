@@ -104,6 +104,20 @@
                         <checksumPolicy>warn</checksumPolicy>
                     </snapshots>
                 </repository>
+                <!-- testng -->
+                <repository>
+                    <id>jcenter</id>
+                    <name>bintray</name>
+                    <url>http://jcenter.bintray.com</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </snapshots>
+                </repository>
             </repositories>
             <pluginRepositories>
                 <pluginRepository>
