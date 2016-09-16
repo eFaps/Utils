@@ -25,6 +25,11 @@
     <profiles>
         <profile>
             <id>efaps</id>
+            <properties>
+                 <org.efaps.db.factory>FACTORY</org.efaps.db.factory>
+                 <org.efaps.db.type>TYPE</org.efaps.db.type>
+                 <org.efaps.db.connection>CONNECTION</org.efaps.db.connection>
+            </properties>
             <repositories>
                 <repository>
                     <id>central</id>
