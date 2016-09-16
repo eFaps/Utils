@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
- Copyright 2003 - 2013 The eFaps Team
+ Copyright 2003 - 2016 The eFaps Team
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -15,141 +15,134 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 
- Author:          The eFaps Team
- Revision:        $Rev: 9352 $
- Last Changed:    $Date: 2013-05-07 14:29:11 -0500 (Tue, 07 May 2013) $
- Last Changed By: $Author: jan@moxter.net $
-
 -->
 
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                        http://maven.apache.org/xsd/settings-1.0.0.xsd">
-
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
     <pluginGroups>
         <pluginGroup>org.efaps.maven</pluginGroup>
     </pluginGroups>
-    <servers>
-        <server>
-          <id>sonatype-nexus-snapshots</id>
-          <username>jan.moxter</username>
-          <password>{vBUtzwM9tuEHwHHDul6iueMGpDlvdHx1k9xpZpVCBT0=}</password>
-        </server>
-    </servers>
-
     <profiles>
         <profile>
             <id>efaps</id>
-            <properties>
-                <org.efaps.db.factory>org.apache.commons.dbcp.BasicDataSourceFactory</org.efaps.db.factory>
-                <org.efaps.db.type>org.efaps.db.databases.PostgreSQLDatabase</org.efaps.db.type>
-                <org.efaps.db.connection>
-                    username = efaps,
-                    password = efaps,
-                    driverClassName = org.postgresql.Driver,
-                    url = jdbc:postgresql://127.0.0.1:5432/efaps,
-                    factory = org.apache.commons.dbcp.BasicDataSourceFactory,
-                    maxActive = 100,
-                    maxIdle = 10,
-                    maxWait = -1,
-                    removeAbandoned = true,
-                    logAbandoned = true
-                </org.efaps.db.connection>
-                <org.efaps.stores>
-                    stores = documents,
-                    documents.naming = eFaps/store/documents,
-                    documents.basename = file://${basedir}/target/store,
-                    documents.provider = org.apache.commons.vfs.provider.local.DefaultLocalFileProvider
-                </org.efaps.stores>
-                <org.efaps.configuration.properties>
-                    org.efaps.transaction.timeout = 9900
-                </org.efaps.configuration.properties>
-            </properties>
             <repositories>
-                <repository >
-                    <id>temp-repository</id>
-                    <snapshots>
-                        <enabled>false</enabled>
-                        <updatePolicy>always</updatePolicy>
-                        <checksumPolicy>warn</checksumPolicy>
-                    </snapshots>
-                    <url>file://${basedir}/src/settings/tempRepo</url>
-                </repository >
                 <repository>
-                    <id>snapshot</id>
+                    <id>jockihendry</id>
                     <releases>
-                        <enabled>false</enabled>
-                        <updatePolicy>always</updatePolicy>
+                        <enabled>true</enabled>
                         <checksumPolicy>warn</checksumPolicy>
                     </releases>
                     <snapshots>
+                        <enabled>false</enabled>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </snapshots>
+                    <url>https://dl.bintray.com/jockihendry/maven</url>
+                    <layout>default</layout>
+                </repository>
+                <repository>
+                    <id>oss_release</id>
+                    <releases>
                         <enabled>true</enabled>
-                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
                         <checksumPolicy>warn</checksumPolicy>
                     </snapshots>
                     <url>http://oss.sonatype.org/content/groups/public</url>
                     <layout>default</layout>
                 </repository>
                 <repository>
-                    <id>maven2-repository.dev.java.net</id>
+                    <id>oss_snapshot</id>
                     <releases>
-                        <enabled>true</enabled>
-                        <updatePolicy>always</updatePolicy>
+                        <enabled>false</enabled>
                         <checksumPolicy>warn</checksumPolicy>
                     </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </snapshots>
+                    <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+                    <layout>default</layout>
+                </repository>
+
+                <repository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </snapshots>
+                    <id>maven2-repository.dev.java.net</id>
                     <name>Java.net Repository for Maven</name>
                     <url>http://download.java.net/maven/2/</url>
                 </repository>
-                <repository >
+
+                <repository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </snapshots>
+                    <id>eviwarePluginRepository</id>
+                    <url>http://www.soapui.org/repository/maven2/</url>
+                </repository>
+                <repository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </snapshots>
+                    <id>jboss.org</id>
+                    <url>https://repository.jboss.org/maven2/</url>
+                </repository>
+                <repository>
                     <id>jfrog-artifactory</id>
                     <url>http://repo.jfrog.org/artifactory/repo</url>
-                </repository >
+                    <releases>
+                        <enabled>true</enabled>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </snapshots>
+                </repository>
             </repositories>
             <pluginRepositories>
                 <pluginRepository>
-                    <id>maven2-repository.dev.java.net</id>
-                    <name>Java.net Repository for Maven</name>
-                    <url>http://download.java.net/maven/2/</url>
+                    <id>snapshot</id>
+                    <releases>
+                        <enabled>true</enabled>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </snapshots>
+                    <url>http://oss.sonatype.org/content/groups/public</url>
                     <layout>default</layout>
                 </pluginRepository>
                 <pluginRepository>
-                    <id>jfrog-plugins</id>
-                    <name>jfrog-plugins-dist</name>
-                    <url>http://repo.jfrog.org/artifactory/repo</url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </snapshots>
+                    <id>maven2-repository.dev.java.net</id>
+                    <name>Java.net Repository for Maven</name>
+                    <url>https://maven.java.net/content/groups/public/</url>
+                    <layout>default</layout>
                 </pluginRepository>
-                 <pluginRepository>
+                <pluginRepository>
                     <id>sonatype-snapshot</id>
                     <name>sonatype-snapshot</name>
                     <url>http://oss.sonatype.org/content/groups/public</url>
                     <layout>default</layout>
                 </pluginRepository>
-            </pluginRepositories>
-        </profile>
-         <profile>
-            <id>jenkins</id>
-            <repositories>
-                <repository>
-                    <id>jenkins</id>
-                    <url>${env.Jenkins.Repository}</url>
-                    <releases>
-                        <enabled>true</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
-                </repository>
-            </repositories>
-            <pluginRepositories>
                 <pluginRepository>
-                    <id>jenkins</id>
-                    <url>${env.Jenkins.Repository}</url>
-                    <releases>
-                        <enabled>true</enabled>
-                    </releases>
                     <snapshots>
-                        <enabled>true</enabled>
+                        <enabled>false</enabled>
+                        <checksumPolicy>warn</checksumPolicy>
                     </snapshots>
+                    <id>jfrog-plugins</id>
+                    <name>jfrog-plugins-dist</name>
+                    <url>http://repo.jfrog.org/artifactory/repo</url>
                 </pluginRepository>
             </pluginRepositories>
         </profile>
