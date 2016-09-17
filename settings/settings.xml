@@ -22,6 +22,15 @@
     <pluginGroups>
         <pluginGroup>org.efaps.maven</pluginGroup>
     </pluginGroups>
+
+    <servers>
+        <server>
+            <id>sonatype-nexus-snapshots</id>
+            <username>${env.USER_ID}</username>
+            <password>${env.USER_PWD}</password>
+        </server>
+    </servers>
+
     <profiles>
         <profile>
             <id>efaps</id>
