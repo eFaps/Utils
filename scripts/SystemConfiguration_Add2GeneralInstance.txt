@@ -1,0 +1,9 @@
+INSERT INTO t_cmgeninst(instid,insttypeid, exid, exsysid)
+SELECT id, typeid, 0, 0
+  FROM public.t_cmabstract
+  where typeid in (SELECT id
+  FROM public.t_cmabstract
+  where uuid='5fecab1b-f4a8-447d-ad64-cf5965fe5d3b')
+  and id not in (select instid from t_cmgeninst where insttypeid in (SELECT id
+  FROM public.t_cmabstract
+  where uuid='5fecab1b-f4a8-447d-ad64-cf5965fe5d3b'))
