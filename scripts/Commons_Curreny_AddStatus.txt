@@ -1,0 +1,5 @@
+UPDATE T_ERPCUR
+   SET status= (SELECT id
+  FROM t_dmstatus
+  where key ='Active'
+  and typeid in (select id from t_cmabstract where uuid = 'a44fd459-7beb-4b59-b395-9cf96303fa5f'));
