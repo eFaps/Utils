@@ -136,6 +136,19 @@
                         <enabled>false</enabled>
                     </snapshots>
                 </repository>
+                <!-- JavaX classes -->
+                <repository>
+                    <id>ops4j</id>
+                    <name>ops4j</name>
+                    <url>http://repository.ops4j.org/maven2/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
             </repositories>
             <pluginRepositories>
                  <pluginRepository>
