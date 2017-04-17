@@ -1,0 +1,6 @@
+UPDATE T_ERPDOC2PAYMENT
+  SET status= (SELECT id
+  FROM t_dmstatus
+  where key ='Executed'
+  and typeid in (select id from t_cmabstract where uuid = '94d57625-8a26-4166-af39-9766a1abea2b'))
+  where TYPEID in (select id from t_cmabstract where uuid = '367bf4d8-d082-4eb6-9afc-88917b876ddb');
