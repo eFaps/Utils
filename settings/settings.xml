@@ -202,7 +202,7 @@
                     <name>jfrog-plugins-dist</name>
                     <url>http://repo.jfrog.org/artifactory/repo</url>
                 </pluginRepository>
-                <!-- JavaX classes -->
+                <!-- JavaX classes 
                 <pluginRepository>
                     <id>ops4j-plugin</id>
                     <name>ops4j</name>
@@ -215,6 +215,7 @@
                         <enabled>false</enabled>
                     </snapshots>
                 </pluginRepository>
+		-->
             </pluginRepositories>
         </profile>
     </profiles>
