@@ -136,7 +136,7 @@
                         <enabled>false</enabled>
                     </snapshots>
                 </repository>
-                <!-- JavaX classes -->
+                <!-- JavaX classes 
                 <repository>
                     <id>ops4j</id>
                     <name>ops4j</name>
@@ -149,6 +149,7 @@
                         <enabled>false</enabled>
                     </snapshots>
                 </repository>
+		-->
             </repositories>
             <pluginRepositories>
                  <pluginRepository>
