@@ -114,7 +114,7 @@
                 </repository>
                 <repository>
                     <id>jfrog-artifactory</id>
-                    <url>http://repo.jfrog.org/artifactory/repo</url>
+                    <url>https://repo.jfrog.org/artifactory/repo</url>
                     <releases>
                         <enabled>true</enabled>
                         <checksumPolicy>warn</checksumPolicy>
@@ -217,7 +217,7 @@
 		<pluginRepository> 
                      <id>repository.spring.milestone-plugins</id> 
                      <name>Spring Milestone Repository</name> 
-                     <url>http://repo.spring.io/milestone</url>
+                     <url>https://repo.spring.io/milestone</url>
 	             <releases>
                         <enabled>true</enabled>
                         <checksumPolicy>warn</checksumPolicy>
