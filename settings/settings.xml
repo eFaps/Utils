@@ -17,7 +17,8 @@
 
 -->
 
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
     <pluginGroups>
         <pluginGroup>org.efaps.maven</pluginGroup>
@@ -35,9 +36,9 @@
         <profile>
             <id>efaps</id>
             <properties>
-                 <org.efaps.db.factory>FACTORY</org.efaps.db.factory>
-                 <org.efaps.db.type>TYPE</org.efaps.db.type>
-                 <org.efaps.db.connection>CONNECTION</org.efaps.db.connection>
+                <org.efaps.db.factory>FACTORY</org.efaps.db.factory>
+                <org.efaps.db.type>TYPE</org.efaps.db.type>
+                <org.efaps.db.connection>CONNECTION</org.efaps.db.connection>
             </properties>
             <repositories>
                 <repository>
@@ -51,18 +52,6 @@
                     <releases>
                         <updatePolicy>never</updatePolicy>
                     </releases>
-                </repository>
-                <repository>
-                    <id>jockihendry</id>
-                    <url>https://dl.bintray.com/jockihendry/maven</url>
-                    <layout>default</layout>
-                    <releases>
-                        <enabled>true</enabled>
-                        <checksumPolicy>warn</checksumPolicy>
-                    </releases>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
                 </repository>
                 <repository>
                     <id>oss_release</id>
@@ -136,11 +125,11 @@
                         <enabled>false</enabled>
                     </snapshots>
                 </repository>
-		<repository> 
-                     <id>repository.spring.milestone</id> 
-                     <name>Spring Milestone Repository</name> 
-                     <url>https://repo.spring.io/milestone</url>
-	             <releases>
+                <repository>
+                    <id>repository.spring.milestone</id>
+                    <name>Spring Milestone Repository</name>
+                    <url>https://repo.spring.io/milestone</url>
+                    <releases>
                         <enabled>true</enabled>
                         <checksumPolicy>warn</checksumPolicy>
                     </releases>
@@ -148,7 +137,7 @@
                         <enabled>false</enabled>
                     </snapshots>
                 </repository>
-                <!-- JavaX classes 
+                <!-- JavaX classes
                 <repository>
                     <id>ops4j</id>
                     <name>ops4j</name>
@@ -162,7 +151,7 @@
                     </snapshots>
                 </repository>
 		-->
-		<repository>
+                <repository>
                     <id>anotheria</id>
                     <url>https://nexus.anotheria.net/nexus/content/groups/public</url>
                     <releases>
@@ -172,10 +161,10 @@
                         <enabled>false</enabled>
                     </snapshots>
                 </repository>
-		    
+
             </repositories>
             <pluginRepositories>
-                 <pluginRepository>
+                <pluginRepository>
                     <id>central</id>
                     <name>Central Repository</name>
                     <url>https://repo.maven.apache.org/maven2</url>
@@ -225,11 +214,11 @@
                     <name>jfrog-plugins-dist</name>
                     <url>https://repo.jfrog.org/artifactory/repo</url>
                 </pluginRepository>
-		<pluginRepository> 
-                     <id>repository.spring.milestone-plugins</id> 
-                     <name>Spring Milestone Repository</name> 
-                     <url>https://repo.spring.io/milestone</url>
-	             <releases>
+                <pluginRepository>
+                    <id>repository.spring.milestone-plugins</id>
+                    <name>Spring Milestone Repository</name>
+                    <url>https://repo.spring.io/milestone</url>
+                    <releases>
                         <enabled>true</enabled>
                         <checksumPolicy>warn</checksumPolicy>
                     </releases>
@@ -237,7 +226,7 @@
                         <enabled>false</enabled>
                     </snapshots>
                 </pluginRepository>
-                <!-- JavaX classes 
+                <!-- JavaX classes
                 <pluginRepository>
                     <id>ops4j-plugin</id>
                     <name>ops4j</name>
