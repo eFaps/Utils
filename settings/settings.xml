@@ -202,7 +202,7 @@
                 <pluginRepository>
                     <id>sonatype-snapshot</id>
                     <name>sonatype-snapshot</name>
-                    <url>https://oss.sonatype.org/content/groups/public</url>
+                    <url>https://central.sonatype.com/repository/maven-snapshots/</url>
                     <layout>default</layout>
                 </pluginRepository>
                 <pluginRepository>
