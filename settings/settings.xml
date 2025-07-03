@@ -64,9 +64,6 @@
 	            <snapshots>
                         <enabled>false</enabled>
                     </snapshots>
-                    <snapshots>
-                        <checksumPolicy>warn</checksumPolicy>
-                    </snapshots>
                 </repository>
                 <repository>
                     <id>oss_snapshot</id>
