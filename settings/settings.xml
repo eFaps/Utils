@@ -101,17 +101,6 @@
                         <enabled>false</enabled>
                     </snapshots>
                 </repository>
-                <repository>
-                    <id>jfrog-artifactory</id>
-                    <url>https://repo.jfrog.org/artifactory/repo</url>
-                    <releases>
-                        <enabled>true</enabled>
-                        <checksumPolicy>warn</checksumPolicy>
-                    </releases>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                </repository>
                 <!-- testng -->
                 <repository>
                     <id>jcenter</id>
